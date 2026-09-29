@@ -96,12 +96,13 @@
   </header>
 
   <!-- ================= SECTION 1 — HERO ================= -->
-  <section class="hero-section" id="hero">
-    <!-- Cinematic Full-Bleed Master Visual -->
-    <div class="hero-bg-media">
-      <img src="./assets/hero_bottle.jpg" alt="BlueFin Omega-3 Fish Oil 1000 MG Bottle resting on ocean rocks with water spray" class="hero-bg-img" id="heroLandingImg" fetchpriority="high">
-      <div class="hero-bg-overlay"></div>
-    </div>
+  <section class="hero-section" id="hero" style="min-height: 400vh; padding: 0; display: block; background: #011424; overflow: visible;">
+    <div class="hero-sticky-wrap" style="position: sticky; top: 0; height: 100vh; width: 100%; display: flex; align-items: center; justify-content: center; overflow: hidden; padding-top: 5rem;">
+      <!-- Cinematic Full-Bleed Master Visual -->
+      <div class="hero-bg-media">
+        <canvas id="hero-scroll-canvas" class="hero-bg-img" style="object-fit: cover; width: 100%; height: 100%;"></canvas>
+        <div class="hero-bg-overlay"></div>
+      </div>
     <div class="hero-sun-glare"></div>
 
     <div class="hero-container">
@@ -182,14 +183,7 @@
           <div class="water-spray-particle p2"></div>
           <div class="water-spray-particle p3"></div>
 
-          <!-- Floating Specification Pill -->
-          <div class="hero-spec-pill">
-            <span class="spec-pulse-dot"></span>
-            <div class="spec-content">
-              <span class="spec-badge-title">1000 MG ACTIVE FISH OIL</span>
-              <span class="spec-badge-desc">180mg EPA • 120mg DHA • 60 Softgels</span>
-            </div>
-          </div>
+
         </div>
       </div>
     </div>
@@ -217,35 +211,44 @@
 
       <!-- Callout 01: Left (Sourcing) -->
       <div class="capsule-callout callout-left" id="calloutSourcing">
-        <div class="callout-tag">01 — SOURCING</div>
-        <h3 class="callout-title">Responsibly Sourced</h3>
-        <p class="callout-desc">Quality begins with where it comes from.</p>
-        <div class="callout-line-connector">
-          <span class="connector-line"></span>
-          <span class="connector-dot pulsing"></span>
+        <div class="callout-tag">01 &nbsp; SOURCING</div>
+        <h3 class="callout-title">Responsibly<br>Sourced</h3>
+        <p class="callout-desc">Quality begins with<br>where it comes from.</p>
+        <div class="callout-line" style="position: absolute; right: -150px; top: 15px;">
+          <svg width="150" height="90" viewBox="0 0 150 90" fill="none">
+             <path d="M0,15 L40,15 L145,85" stroke="rgba(255,255,255,0.7)" stroke-width="1" />
+             <circle cx="145" cy="85" r="3" fill="#fbbf24" class="pulsing"/>
+             <circle cx="0" cy="15" r="2" fill="rgba(255,255,255,0.9)"/>
+          </svg>
         </div>
       </div>
 
       <!-- Callout 02: Right (Purity) -->
       <div class="capsule-callout callout-right" id="calloutPurity">
-        <div class="callout-line-connector reverse">
-          <span class="connector-dot pulsing"></span>
-          <span class="connector-line"></span>
+        <div class="callout-tag">02 &nbsp; PURITY</div>
+        <h3 class="callout-title">Carefully<br>Processed</h3>
+        <p class="callout-desc">Every step is handled with<br>care to preserve what matters.</p>
+        <div class="callout-line" style="position: absolute; left: -150px; top: 15px;">
+          <svg width="150" height="90" viewBox="0 0 150 90" fill="none">
+             <path d="M150,15 L110,15 L5,85" stroke="rgba(255,255,255,0.7)" stroke-width="1" />
+             <circle cx="5" cy="85" r="3" fill="#fbbf24" class="pulsing"/>
+             <circle cx="150" cy="15" r="2" fill="rgba(255,255,255,0.9)"/>
+          </svg>
         </div>
-        <div class="callout-tag">02 — PURITY</div>
-        <h3 class="callout-title">Carefully Processed</h3>
-        <p class="callout-desc">Every step is handled with care to preserve what matters.</p>
       </div>
 
       <!-- Callout 03: Bottom Center (Formulation) -->
       <div class="capsule-callout callout-bottom" id="calloutFormulation">
-        <div class="callout-line-vertical">
-          <span class="connector-dot pulsing"></span>
-          <span class="v-line"></span>
-        </div>
-        <div class="callout-tag">03 — FORMULATION</div>
+        <div class="callout-tag">03 &nbsp; FORMULATION</div>
         <h3 class="callout-title">Expertly Capsuled</h3>
         <p class="callout-desc">Designed for simple, everyday wellness.</p>
+        <div class="callout-line" style="position: absolute; top: -75px; left: 50%; transform: translateX(-50%);">
+          <svg width="100" height="75" viewBox="0 0 100 75" fill="none">
+             <path d="M50,75 L50,60 L10,60 L10,5" stroke="rgba(255,255,255,0.7)" stroke-width="1" />
+             <circle cx="10" cy="5" r="3" fill="#fbbf24" class="pulsing"/>
+             <circle cx="50" cy="75" r="2" fill="rgba(255,255,255,0.9)"/>
+          </svg>
+        </div>
       </div>
     </div>
 

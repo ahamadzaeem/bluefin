@@ -677,13 +677,12 @@ ul {
 .capsule-image-container {
   position: relative;
   z-index: 2;
-  max-width: 820px;
+  max-width: 100%;
   width: 100%;
-  border-radius: 20px;
   overflow: hidden;
   transition: var(--trans-smooth);
-  mask-image: radial-gradient(ellipse 95% 85% at 50% 50%, black 75%, transparent 100%);
-  -webkit-mask-image: radial-gradient(ellipse 95% 85% at 50% 50%, black 75%, transparent 100%);
+  mask-image: radial-gradient(ellipse 75% 75% at 50% 50%, black 50%, transparent 100%);
+  -webkit-mask-image: radial-gradient(ellipse 75% 75% at 50% 50%, black 50%, transparent 100%);
 }
 .capsule-image-container:hover {
   transform: scale(1.02);
@@ -724,17 +723,17 @@ ul {
 
 /* Positioning & Connectors */
 .callout-left {
-  top: 30%;
-  left: 0;
+  top: 35%;
+  left: 20px;
   text-align: left;
 }
 .callout-right {
-  top: 30%;
-  right: 0;
+  top: 35%;
+  right: 20px;
   text-align: right;
 }
 .callout-bottom {
-  bottom: -20px;
+  bottom: 0px;
   left: 50%;
   transform: translateX(-50%);
   text-align: center;

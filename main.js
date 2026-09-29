@@ -484,4 +484,92 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // ------------------------------------------------------------------------
+  // 9. HERO VIDEO SCROLL ANIMATION
+  // ------------------------------------------------------------------------
+  const canvas = document.getElementById('hero-scroll-canvas');
+  if (canvas) {
+    const context = canvas.getContext('2d');
+    const frameCount = 120;
+    
+    // Set canvas dimensions (matches 720p 16:9)
+    canvas.width = 1280;
+    canvas.height = 720;
+    
+    const currentFrame = index => (
+      `/hero_frames/frame_${(index + 1).toString().padStart(4, '0')}.jpg`
+    );
+    
+    const images = [];
+    let imagesLoaded = 0;
+    
+    // Preload all frames
+    for (let i = 0; i < frameCount; i++) {
+      const img = new Image();
+      img.src = currentFrame(i);
+      images.push(img);
+      img.onload = () => {
+        imagesLoaded++;
+        if (imagesLoaded === 1) { 
+           // Render first frame immediately
+           context.drawImage(images[0], 0, 0, canvas.width, canvas.height);
+        }
+      };
+    }
+    
+    const updateScrollAnimation = () => {
+      const heroSection = document.getElementById('hero');
+      if (!heroSection) return;
+      
+      const scrollTop = window.scrollY;
+      const maxScroll = heroSection.offsetHeight - window.innerHeight;
+      
+      let scrollFraction = scrollTop / maxScroll;
+      if (scrollFraction < 0) scrollFraction = 0;
+      if (scrollFraction > 1) scrollFraction = 1;
+      
+      const frameIndex = Math.min(
+        frameCount - 1,
+        Math.floor(scrollFraction * frameCount)
+      );
+      
+      requestAnimationFrame(() => {
+        if (images[frameIndex] && images[frameIndex].complete) {
+          context.drawImage(images[frameIndex], 0, 0, canvas.width, canvas.height);
+        }
+        
+        // Handle text and overlay opacity
+        const overlay = document.querySelector('.hero-bg-overlay');
+        const glare = document.querySelector('.hero-sun-glare');
+        const content = document.querySelector('.hero-container');
+        const header = document.getElementById('siteHeader');
+        
+        let opacity = 0;
+        // Start fading in around frame 90, fully visible by frame 105
+        if (frameIndex > 90) {
+          opacity = Math.min(1, (frameIndex - 90) / 15);
+        }
+        
+        if (overlay) overlay.style.opacity = opacity;
+        if (glare) glare.style.opacity = opacity;
+        
+        if (content) {
+            content.style.opacity = opacity;
+            content.style.transform = `translateY(${(1 - opacity) * 30}px)`;
+            // Ensure pointer events are disabled when hidden so buttons don't block clicks
+            content.style.pointerEvents = opacity > 0.5 ? 'auto' : 'none';
+        }
+        
+        if (header) {
+            header.style.opacity = opacity;
+            header.style.pointerEvents = opacity > 0.5 ? 'auto' : 'none';
+        }
+      });
+    };
+    
+    window.addEventListener('scroll', updateScrollAnimation);
+    // Initialize opacity immediately
+    updateScrollAnimation();
+  }
+
 });
