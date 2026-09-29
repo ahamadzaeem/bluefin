@@ -1,0 +1,878 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BlueFin — Omega-3 for Everyday Family Wellness | Pure Fish Oil</title>
+  <meta name="description" content="Responsibly sourced. Carefully processed. Expertly capsulated. BlueFin delivers pure, high-potency Omega-3 fish oil (1000mg and 500mg) for everyday family wellness. Available across Kerala pharmacies and Amazon.">
+  <meta name="keywords" content="BlueFin, Omega 3, fish oil, EPA, DHA, family wellness, 1000mg fish oil, 500mg fish oil, Kerala pharmacies, Amazon">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><circle cx='16' cy='16' r='14' fill='%23072136'/><path d='M8 17c3-5 7-6 11-3 3-4 6-2 5 2-2 4-6 5-10 4-3 2-5 0-6-3z' fill='%2300b4d8'/><circle cx='21' cy='14' r='1.5' fill='%23ffffff'/></svg>">
+
+  <!-- Google Fonts: Editorial Serif (Playfair Display & Cormorant Garamond) + Modern Sans (Plus Jakarta Sans) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+
+  <!-- ================= TOP NAVIGATION ================= -->
+  <header class="site-header" id="siteHeader">
+    <div class="nav-container">
+      <!-- Logo -->
+      <a href="#" class="brand-logo" id="brandLogo" aria-label="BlueFin Home">
+        <svg class="logo-mark" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="18" cy="18" r="17" fill="url(#logoGlow)" stroke="currentColor" stroke-width="1.2" stroke-opacity="0.3"/>
+          <path d="M10 18.5C13.5 13 18.5 12 23 15C26 10.5 29 13.5 27.5 17.5C25 22 20 23 15.5 21.5C12 23.5 10 21 10 18.5Z" fill="url(#finGrad)"/>
+          <circle cx="23.5" cy="16" r="1.5" fill="#ffffff"/>
+          <defs>
+            <linearGradient id="logoGlow" x1="0" y1="0" x2="36" y2="36" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#0a3254" stop-opacity="0.6"/>
+              <stop offset="1" stop-color="#031726" stop-opacity="0.9"/>
+            </linearGradient>
+            <linearGradient id="finGrad" x1="10" y1="12" x2="28" y2="23" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#38bdf8"/>
+              <stop offset="0.5" stop-color="#0ea5e9"/>
+              <stop offset="1" stop-color="#0284c7"/>
+            </linearGradient>
+          </defs>
+        </svg>
+        <span class="brand-name">BlueFin</span>
+      </a>
+
+      <!-- Navigation Links -->
+      <nav class="nav-menu" id="navMenu">
+        <a href="#products" class="nav-link">Shop</a>
+        <a href="#why-bluefin" class="nav-link">Why BlueFin</a>
+        <a href="#family" class="nav-link">Our Story</a>
+        <a href="#routine" class="nav-link">Wellness</a>
+        <a href="#faq" class="nav-link">FAQ</a>
+      </nav>
+
+      <!-- Right Utility Actions -->
+      <div class="nav-actions">
+        <button class="nav-icon-btn" id="searchTrigger" aria-label="Search">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+        </button>
+
+        <button class="nav-icon-btn" id="accountTrigger" aria-label="Account">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+            <circle cx="12" cy="7" r="4"></circle>
+          </svg>
+        </button>
+
+        <button class="nav-icon-btn cart-btn" id="cartTrigger" aria-label="View Cart">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <path d="M16 10a4 4 0 0 1-8 0"></path>
+          </svg>
+          <span class="cart-badge" id="cartBadge">1</span>
+        </button>
+
+        <a href="#products" class="btn btn-pill-nav" id="navShopNow">
+          SHOP NOW
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </a>
+
+        <!-- Mobile Menu Toggle -->
+        <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle Navigation">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ================= SECTION 1 — HERO ================= -->
+  <section class="hero-section" id="hero">
+    <!-- Cinematic Full-Bleed Master Visual -->
+    <div class="hero-bg-media">
+      <img src="./assets/hero_bottle.jpg" alt="BlueFin Omega-3 Fish Oil 1000 MG Bottle resting on ocean rocks with water spray" class="hero-bg-img" id="heroLandingImg" fetchpriority="high">
+      <div class="hero-bg-overlay"></div>
+    </div>
+    <div class="hero-sun-glare"></div>
+
+    <div class="hero-container">
+      <!-- Left Column: Copy & CTAs -->
+      <div class="hero-left">
+        <div class="hero-eyebrow">
+          <span class="eyebrow-dot"></span>
+          PURE OMEGA-3, BRIGHTER TOMORROWS.
+        </div>
+
+        <h1 class="hero-title">
+          Omega-3 for<br>
+          everyday<br>
+          family wellness.
+        </h1>
+
+        <p class="hero-subtitle">
+          Responsibly sourced. Carefully processed. Expertly capsulated.
+        </p>
+
+        <div class="hero-cta-group">
+          <a href="#products" class="btn btn-white" id="heroShopBtn">
+            SHOP OMEGA-3
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </a>
+          <a href="#difference" class="btn btn-frosted" id="heroExploreBtn">
+            EXPLORE BLUEFIN
+          </a>
+        </div>
+
+        <!-- 3 Feature Badges with Icons -->
+        <div class="hero-features-row">
+          <div class="hero-feature-item">
+            <div class="feature-icon-box">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M2 12c4-4 8 0 12-4 3-2 6-1 8 1-3 4-7 5-11 3-3 2-6 1-9 0"></path>
+                <path d="M7 16c2 1 5 1 8-1"></path>
+              </svg>
+            </div>
+            <span class="feature-label">Responsibly<br>Sourced</span>
+          </div>
+
+          <div class="feature-divider"></div>
+
+          <div class="hero-feature-item">
+            <div class="feature-icon-box">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"></path>
+                <path d="M12 8a4 4 0 0 0-4 4"></path>
+              </svg>
+            </div>
+            <span class="feature-label">Carefully<br>Processed</span>
+          </div>
+
+          <div class="feature-divider"></div>
+
+          <div class="hero-feature-item">
+            <div class="feature-icon-box">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="5" y="4" width="14" height="16" rx="7" transform="rotate(-30 12 12)"></rect>
+                <line x1="8" y1="8" x2="16" y2="16"></line>
+              </svg>
+            </div>
+            <span class="feature-label">Expertly<br>Capsuled</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column: Photorealistic Bottle on Ocean Rocks -->
+      <div class="hero-right">
+        <div class="hero-bottle-wrap" id="heroBottleWrap">
+          <div class="bottle-glow-halo"></div>
+          <img src="./assets/hero_bottle.jpg" alt="BlueFin Omega-3 Fish Oil 1000 MG Bottle resting on ocean rocks with water spray" class="hero-bottle-img" id="heroBottleImg">
+          <div class="water-spray-particle p1"></div>
+          <div class="water-spray-particle p2"></div>
+          <div class="water-spray-particle p3"></div>
+
+          <!-- Floating Specification Pill -->
+          <div class="hero-spec-pill">
+            <span class="spec-pulse-dot"></span>
+            <div class="spec-content">
+              <span class="spec-badge-title">1000 MG ACTIVE FISH OIL</span>
+              <span class="spec-badge-desc">180mg EPA • 120mg DHA • 60 Softgels</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SECTION 2 — THE CAPSULE SECTION ================= -->
+  <section class="capsule-section" id="difference">
+    <div class="capsule-ambient-bg"></div>
+
+    <div class="section-header text-center">
+      <div class="section-eyebrow">THE BLUEFIN DIFFERENCE</div>
+      <h2 class="section-title text-white">What goes inside<br>every BlueFin capsule.</h2>
+    </div>
+
+    <!-- Interactive Capsule Experience Stage -->
+    <div class="capsule-stage-wrapper">
+      <!-- Golden Solar Halo Behind Capsule -->
+      <div class="capsule-solar-halo" id="solarHalo"></div>
+
+      <!-- Floating Capsule Image with Glow -->
+      <div class="capsule-image-container" id="capsuleContainer">
+        <img src="./assets/capsule_sunlight.jpg" alt="Oversized glowing translucent Omega-3 softgel capsule catching warm sunlight" class="capsule-main-img" id="capsuleImg">
+        <div class="capsule-reflection-plate"></div>
+      </div>
+
+      <!-- Callout 01: Left (Sourcing) -->
+      <div class="capsule-callout callout-left" id="calloutSourcing">
+        <div class="callout-tag">01 — SOURCING</div>
+        <h3 class="callout-title">Responsibly Sourced</h3>
+        <p class="callout-desc">Quality begins with where it comes from.</p>
+        <div class="callout-line-connector">
+          <span class="connector-line"></span>
+          <span class="connector-dot pulsing"></span>
+        </div>
+      </div>
+
+      <!-- Callout 02: Right (Purity) -->
+      <div class="capsule-callout callout-right" id="calloutPurity">
+        <div class="callout-line-connector reverse">
+          <span class="connector-dot pulsing"></span>
+          <span class="connector-line"></span>
+        </div>
+        <div class="callout-tag">02 — PURITY</div>
+        <h3 class="callout-title">Carefully Processed</h3>
+        <p class="callout-desc">Every step is handled with care to preserve what matters.</p>
+      </div>
+
+      <!-- Callout 03: Bottom Center (Formulation) -->
+      <div class="capsule-callout callout-bottom" id="calloutFormulation">
+        <div class="callout-line-vertical">
+          <span class="connector-dot pulsing"></span>
+          <span class="v-line"></span>
+        </div>
+        <div class="callout-tag">03 — FORMULATION</div>
+        <h3 class="callout-title">Expertly Capsuled</h3>
+        <p class="callout-desc">Designed for simple, everyday wellness.</p>
+      </div>
+    </div>
+
+    <!-- Purity Specs Mini-Bar -->
+    <div class="capsule-specs-strip">
+      <div class="spec-cell">
+        <span class="spec-num">100%</span>
+        <span class="spec-text">Molecularly Distilled</span>
+      </div>
+      <div class="spec-cell">
+        <span class="spec-num">0.00</span>
+        <span class="spec-text">Heavy Metals & Toxins</span>
+      </div>
+      <div class="spec-cell">
+        <span class="spec-num">ZERO</span>
+        <span class="spec-text">Fishy Burps or Odour</span>
+      </div>
+      <div class="spec-cell">
+        <span class="spec-num">GMP</span>
+        <span class="spec-text">Pharmaceutical Certified</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SECTION 3 — MEET BLUEFIN (PRODUCTS) ================= -->
+  <section class="products-section" id="products">
+    <div class="products-container">
+      <div class="section-header text-center">
+        <div class="section-eyebrow text-blue">OUR PRODUCTS</div>
+        <h2 class="section-title text-navy">Omega-3. Made for everyday life.</h2>
+        <p class="section-subtitle">Two strengths. The same trusted care.</p>
+      </div>
+
+      <!-- Two Large Editorial Product Cards -->
+      <div class="product-cards-grid">
+        <!-- Product 1: 1000 MG -->
+        <div class="product-card" id="card1000mg">
+          <div class="card-glass-body">
+            <div class="card-visual-pane">
+              <img src="./assets/product_1000mg_fullview.png" alt="BlueFin Omega-3 Fish Oil 1000 MG Bottle with 60 softgels" class="product-bottle-img">
+            </div>
+
+            <div class="card-info-pane">
+              <div class="product-brand-tag">BLUEFIN</div>
+              <h3 class="product-name">OMEGA-3 1000 MG</h3>
+              <div class="product-strength-pill">
+                <strong>EPA 180mg</strong> &bull; <strong>DHA 120mg</strong>
+              </div>
+
+              <ul class="product-benefits-list">
+                <li>
+                  <svg class="check-icon" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                  </svg>
+                  <span>Full body support</span>
+                </li>
+                <li>
+                  <svg class="check-icon" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                  </svg>
+                  <span>Heart health</span>
+                </li>
+                <li>
+                  <svg class="check-icon" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                  </svg>
+                  <span>Everyday wellness</span>
+                </li>
+              </ul>
+
+              <div class="card-btn-group">
+                <button class="btn btn-navy-card view-modal-btn" data-product="1000">
+                  VIEW PRODUCT
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 2: 500 MG -->
+        <div class="product-card" id="card500mg">
+          <div class="card-glass-body">
+            <div class="card-visual-pane">
+              <img src="./assets/product_500mg_fullview.png" alt="BlueFin Omega-3 Fish Oil 500 MG Bottle with 60 softgels" class="product-bottle-img">
+            </div>
+
+            <div class="card-info-pane">
+              <div class="product-brand-tag">BLUEFIN</div>
+              <h3 class="product-name"><span class="name-sub">OMEGA-3</span> <span class="coral-text">500 MG</span></h3>
+              <div class="product-strength-pill coral-pill">
+                <strong>EPA 90mg</strong> &bull; <strong>DHA 60mg</strong>
+              </div>
+
+              <ul class="product-benefits-list">
+                <li>
+                  <svg class="check-icon" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                  </svg>
+                  <span>Full body support</span>
+                </li>
+                <li>
+                  <svg class="check-icon" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                  </svg>
+                  <span>Heart health</span>
+                </li>
+                <li>
+                  <svg class="check-icon" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                  </svg>
+                  <span>Everyday wellness</span>
+                </li>
+              </ul>
+
+              <div class="card-btn-group">
+                <button class="btn btn-navy-card view-modal-btn" data-product="500">
+                  VIEW PRODUCT
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SECTION 4 — FAMILY WELLNESS ================= -->
+  <section class="family-section" id="family">
+    <div class="family-image-container">
+      <img src="./assets/family_wellness.jpg" alt="Multigenerational Indian family enjoying golden sunlight outdoors together in wellness" class="family-bg-img">
+      <div class="family-gradient-overlay"></div>
+
+      <div class="family-content-box">
+        <h2 class="family-title">
+          Wellness that<br>
+          belongs in every<br>
+          generation.
+        </h2>
+        <p class="family-subtitle">
+          One simple daily habit. Made for the people who matter most.
+        </p>
+        <a href="#why-bluefin" class="btn btn-frosted-light" id="ourStoryBtn">
+          OUR STORY
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SECTION 5 — WHY BLUEFIN ================= -->
+  <section class="reasons-section" id="why-bluefin">
+    <div class="reasons-container">
+      <div class="section-header text-center">
+        <div class="section-eyebrow">WHY CHOOSE BLUEFIN</div>
+        <h2 class="section-title text-white">Four reasons. A healthier you.</h2>
+      </div>
+
+      <div class="reasons-grid">
+        <!-- Col 01 -->
+        <div class="reason-column">
+          <div class="reason-top-row">
+            <span class="reason-num">01</span>
+            <div class="reason-icon-wrap">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M2 16s9-15 20-4c-4 2-8 3-12 1-3 2-6 2-8 3z"></path>
+                <circle cx="18" cy="13" r="1" fill="currentColor"></circle>
+              </svg>
+            </div>
+          </div>
+          <h3 class="reason-title">Omega-3 Rich</h3>
+          <p class="reason-desc">High-quality EPA & DHA for full body & heart support.</p>
+        </div>
+
+        <!-- Col 02 -->
+        <div class="reason-column">
+          <div class="reason-top-row">
+            <span class="reason-num">02</span>
+            <div class="reason-icon-wrap">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                <path d="M12 8v4l3 3"></path>
+              </svg>
+            </div>
+          </div>
+          <h3 class="reason-title">Responsibly Sourced</h3>
+          <p class="reason-desc">From clean, sustainable cold-water marine sources.</p>
+        </div>
+
+        <!-- Col 03 -->
+        <div class="reason-column">
+          <div class="reason-top-row">
+            <span class="reason-num">03</span>
+            <div class="reason-icon-wrap">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"></path>
+              </svg>
+            </div>
+          </div>
+          <h3 class="reason-title">Carefully Processed</h3>
+          <p class="reason-desc">Every step ensures exceptional purity, freshness, and potency.</p>
+        </div>
+
+        <!-- Col 04 -->
+        <div class="reason-column">
+          <div class="reason-top-row">
+            <span class="reason-num">04</span>
+            <div class="reason-icon-wrap">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="5" y="4" width="14" height="16" rx="7" transform="rotate(-30 12 12)"></rect>
+                <line x1="8" y1="8" x2="16" y2="16"></line>
+              </svg>
+            </div>
+          </div>
+          <h3 class="reason-title">Expertly Capsuled</h3>
+          <p class="reason-desc">Designed for simple, odor-free, everyday family wellness.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SECTION 6 — HOW TO MAKE IT PART OF YOUR DAY ================= -->
+  <section class="routine-section" id="routine">
+    <div class="routine-container">
+      <div class="section-header text-center">
+        <div class="section-eyebrow text-blue">MAKE IT PART OF YOUR DAY</div>
+        <h2 class="section-title text-navy">A simple habit. A brighter tomorrow.</h2>
+      </div>
+
+      <div class="routine-steps-row">
+        <!-- Step 1: START -->
+        <div class="routine-step-card">
+          <div class="routine-circle-img-wrap">
+            <img src="./assets/lifestyle_morning.jpg" alt="Morning coffee cup on balcony overlooking golden sunrise on ocean" class="routine-circle-img">
+          </div>
+          <div class="step-meta">
+            <h3 class="step-label">START</h3>
+            <p class="step-desc">Your day begins.</p>
+          </div>
+        </div>
+
+        <!-- Connector Arrow -->
+        <div class="routine-arrow-connector">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="4" y1="12" x2="20" y2="12"></line>
+            <polyline points="14 6 20 12 14 18"></polyline>
+          </svg>
+        </div>
+
+        <!-- Step 2: SUPPORT -->
+        <div class="routine-step-card">
+          <div class="routine-circle-img-wrap">
+            <img src="./assets/lifestyle_support.jpg" alt="Indian woman drinking a glass of pure water taking daily supplement" class="routine-circle-img">
+          </div>
+          <div class="step-meta">
+            <h3 class="step-label">SUPPORT</h3>
+            <p class="step-desc">Make wellness part of your routine.</p>
+          </div>
+        </div>
+
+        <!-- Connector Arrow -->
+        <div class="routine-arrow-connector">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="4" y1="12" x2="20" y2="12"></line>
+            <polyline points="14 6 20 12 14 18"></polyline>
+          </svg>
+        </div>
+
+        <!-- Step 3: REPEAT -->
+        <div class="routine-step-card">
+          <div class="routine-circle-img-wrap">
+            <img src="./assets/lifestyle_repeat.jpg" alt="Tranquil sunset over peaceful backwaters reflecting warm golden light" class="routine-circle-img">
+          </div>
+          <div class="step-meta">
+            <h3 class="step-label">REPEAT</h3>
+            <p class="step-desc">Simple, everyday consistency.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SECTION 7 — WHERE TO FIND US ================= -->
+  <section class="find-us-section" id="where-to-find">
+    <div class="find-us-background">
+      <img src="./assets/kerala_scenic.jpg" alt="Serene Kerala backwaters with houseboats and coconut palm trees" class="find-us-bg-img">
+      <div class="find-us-overlay"></div>
+    </div>
+
+    <div class="find-us-container">
+      <!-- Left: Content & Actions -->
+      <div class="find-us-left">
+        <div class="section-eyebrow text-blue">WHERE TO FIND US</div>
+        <h2 class="find-us-title">BlueFin is closer<br>than you think.</h2>
+        <p class="find-us-subtitle">
+          Available at your neighbourhood pharmacies across Kerala and on Amazon.
+        </p>
+
+        <div class="find-us-cta-row">
+          <button class="btn btn-white-pill" id="findPharmacyBtn">
+            FIND A PHARMACY
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </button>
+          <a href="https://www.amazon.in" target="_blank" rel="noopener noreferrer" class="btn btn-navy-pill" id="shopAmazonBtn">
+            SHOP ON AMAZON
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="7" y1="17" x2="17" y2="7"></line>
+              <polyline points="7 7 17 7 17 17"></polyline>
+            </svg>
+          </a>
+        </div>
+
+        <!-- Trust Partner Badges -->
+        <div class="find-us-badges-row">
+          <div class="pharmacy-trust-badge">
+            <div class="green-cross-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M19 10.5h-5.5V5c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v5.5H5c-.83 0-1.5.67-1.5 1.5s.67 1.5 1.5 1.5h5.5V19c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5v-5.5H19c.83 0 1.5-.67 1.5-1.5s-.67-1.5-1.5-1.5z"/>
+              </svg>
+            </div>
+            <div class="pharmacy-text">
+              <span class="badge-label">Pharmacies</span>
+              <span class="badge-sub">Across Kerala</span>
+            </div>
+          </div>
+
+          <div class="amazon-trust-badge">
+            <span class="amazon-word">amazon</span>
+            <svg class="amazon-smile" viewBox="0 0 70 20" fill="none">
+              <path d="M5 10C20 18 50 18 65 8" stroke="#ff9900" stroke-width="3" stroke-linecap="round"/>
+              <path d="M62 4L67 9L59 11" fill="#ff9900"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Stylized Translucent Kerala Map with Glowing City Pins -->
+      <div class="find-us-right">
+        <div class="kerala-map-stage">
+          <div class="map-glow-underlay"></div>
+          
+          <!-- Stylized Kerala Geography SVG -->
+          <svg class="kerala-map-svg" viewBox="0 0 260 480" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- Coastal Boundary Curve of Kerala -->
+            <path d="M140 20 C145 35, 130 50, 115 70 C100 90, 85 110, 80 135 C75 160, 90 185, 100 205 C110 225, 130 245, 135 270 C140 295, 125 320, 140 350 C155 380, 175 410, 195 440 C205 455, 215 465, 210 470 C200 472, 190 455, 175 435 C150 400, 125 365, 110 330 C95 295, 90 260, 80 230 C70 200, 55 170, 60 135 C65 100, 80 70, 95 45 C110 25, 130 15, 140 20 Z" 
+                  fill="url(#keralaFill)" stroke="rgba(255,255,255,0.7)" stroke-width="2" filter="drop-shadow(0 8px 24px rgba(7,33,54,0.15))"/>
+            
+            <defs>
+              <linearGradient id="keralaFill" x1="60" y1="20" x2="210" y2="470" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#ffffff" stop-opacity="0.85"/>
+                <stop offset="0.5" stop-color="#e0f2fe" stop-opacity="0.75"/>
+                <stop offset="1" stop-color="#bae6fd" stop-opacity="0.8"/>
+              </linearGradient>
+            </defs>
+
+            <!-- Pin 1: Kannur / Kozhikode -->
+            <g class="map-pin-group" transform="translate(90, 110)" data-district="Kozhikode">
+              <circle cx="0" cy="0" r="14" class="pin-pulse"/>
+              <circle cx="0" cy="0" r="6" fill="#0284c7"/>
+              <circle cx="0" cy="0" r="3" fill="#ffffff"/>
+              <text x="16" y="4" class="map-city-label">Kozhikode</text>
+            </g>
+
+            <!-- Pin 2: Thrissur -->
+            <g class="map-pin-group" transform="translate(105, 205)" data-district="Thrissur">
+              <circle cx="0" cy="0" r="14" class="pin-pulse"/>
+              <circle cx="0" cy="0" r="6" fill="#0284c7"/>
+              <circle cx="0" cy="0" r="3" fill="#ffffff"/>
+              <text x="16" y="4" class="map-city-label">Thrissur</text>
+            </g>
+
+            <!-- Pin 3: Kochi / Ernakulam -->
+            <g class="map-pin-group" transform="translate(125, 270)" data-district="Kochi">
+              <circle cx="0" cy="0" r="18" class="pin-pulse primary-pin"/>
+              <circle cx="0" cy="0" r="8" fill="#0369a1"/>
+              <circle cx="0" cy="0" r="4" fill="#38bdf8"/>
+              <text x="18" y="4" class="map-city-label main-city">Kochi</text>
+            </g>
+
+            <!-- Pin 4: Kottayam / Alappuzha -->
+            <g class="map-pin-group" transform="translate(140, 335)" data-district="Kottayam">
+              <circle cx="0" cy="0" r="14" class="pin-pulse"/>
+              <circle cx="0" cy="0" r="6" fill="#0284c7"/>
+              <circle cx="0" cy="0" r="3" fill="#ffffff"/>
+              <text x="16" y="4" class="map-city-label">Kottayam</text>
+            </g>
+
+            <!-- Pin 5: Thiruvananthapuram -->
+            <g class="map-pin-group" transform="translate(185, 430)" data-district="Thiruvananthapuram">
+              <circle cx="0" cy="0" r="14" class="pin-pulse"/>
+              <circle cx="0" cy="0" r="6" fill="#0284c7"/>
+              <circle cx="0" cy="0" r="3" fill="#ffffff"/>
+              <text x="-18" y="4" class="map-city-label" text-anchor="end">Thiruvananthapuram</text>
+            </g>
+          </svg>
+
+          <!-- Interactive Tooltip Overlay -->
+          <div class="map-info-tooltip" id="mapTooltip">
+            <strong id="tooltipDistrict">Kochi Hub</strong>
+            <span>48 Partner Pharmacies Available</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SECTION 8 — FOOTER ================= -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-main-row">
+        <!-- Brand Summary -->
+        <div class="footer-col-brand">
+          <a href="#" class="footer-brand-logo">
+            <svg class="logo-mark" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="18" cy="18" r="17" fill="url(#footLogoGlow)" stroke="#38bdf8" stroke-width="1.2" stroke-opacity="0.4"/>
+              <path d="M10 18.5C13.5 13 18.5 12 23 15C26 10.5 29 13.5 27.5 17.5C25 22 20 23 15.5 21.5C12 23.5 10 21 10 18.5Z" fill="#38bdf8"/>
+              <circle cx="23.5" cy="16" r="1.5" fill="#ffffff"/>
+              <defs>
+                <linearGradient id="footLogoGlow" x1="0" y1="0" x2="36" y2="36" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#0a3254"/>
+                  <stop offset="1" stop-color="#031726"/>
+                </linearGradient>
+              </defs>
+            </svg>
+            <span class="footer-brand-name">BlueFin</span>
+          </a>
+          <p class="footer-tagline">Better Omega-3.<br>Brighter Tomorrows.</p>
+          <div class="footer-purity-badges">
+            <span class="badge-mini">GMP Certified</span>
+            <span class="badge-mini">Molecularly Distilled</span>
+            <span class="badge-mini">Third-Party Tested</span>
+          </div>
+        </div>
+
+        <!-- Shop Links -->
+        <div class="footer-col">
+          <h4 class="footer-heading">Shop</h4>
+          <ul class="footer-links">
+            <li><a href="#card1000mg">Omega-3 1000mg</a></li>
+            <li><a href="#card500mg">Omega-3 500mg</a></li>
+            <li><a href="#products">All Products</a></li>
+            <li><a href="#routine">Everyday Wellness Routine</a></li>
+          </ul>
+        </div>
+
+        <!-- Learn Links -->
+        <div class="footer-col">
+          <h4 class="footer-heading">Learn</h4>
+          <ul class="footer-links">
+            <li><a href="#why-bluefin">Why BlueFin</a></li>
+            <li><a href="#family">Our Story</a></li>
+            <li><a href="#difference">Purity & Sourcing</a></li>
+            <li><a href="#faq">FAQ</a></li>
+          </ul>
+        </div>
+
+        <!-- Support Links -->
+        <div class="footer-col">
+          <h4 class="footer-heading">Support</h4>
+          <ul class="footer-links">
+            <li><a href="#where-to-find">Pharmacy Locator</a></li>
+            <li><a href="#" id="trackOrderLink">Track Order</a></li>
+            <li><a href="#" id="shippingLink">Shipping & Returns</a></li>
+            <li><a href="#" id="contactLink">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <!-- Newsletter Column -->
+        <div class="footer-col-newsletter">
+          <h4 class="footer-heading">Join Our Newsletter</h4>
+          <p class="newsletter-sub">Get wellness tips and updates.</p>
+          <form class="newsletter-form" id="newsletterForm">
+            <div class="input-wrap">
+              <input type="email" placeholder="Your email address" required id="newsletterEmail" aria-label="Email address for newsletter">
+              <button type="submit" class="newsletter-submit-btn" aria-label="Subscribe">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </button>
+            </div>
+          </form>
+          <p class="privacy-note">We respect your privacy. Unsubscribe anytime.</p>
+        </div>
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="footer-bottom-bar">
+        <div class="copyright-text">
+          &copy; 2026 BlueFin. All rights reserved.
+        </div>
+        
+        <div class="legal-links">
+          <a href="#">Privacy Policy</a>
+          <span class="sep">&bull;</span>
+          <a href="#">Terms of Service</a>
+          <span class="sep">&bull;</span>
+          <a href="#">Regulatory Info</a>
+        </div>
+
+        <div class="social-links">
+          <a href="#" aria-label="Email"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg></a>
+          <a href="#" aria-label="Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></a>
+          <a href="#" aria-label="Facebook"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg></a>
+          <a href="#" aria-label="YouTube"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon></svg></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ================= SLIDE-OUT CART DRAWER ================= -->
+  <div class="cart-drawer-backdrop" id="cartBackdrop"></div>
+  <aside class="cart-drawer" id="cartDrawer" aria-label="Shopping Cart">
+    <div class="cart-drawer-header">
+      <div class="cart-title-wrap">
+        <h3 class="cart-heading">Your Cart</h3>
+        <span class="cart-item-count" id="cartItemCountLabel">(1 item)</span>
+      </div>
+      <button class="cart-close-btn" id="cartCloseBtn" aria-label="Close Cart">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Free Delivery Progress Bar -->
+    <div class="cart-shipping-bar">
+      <div class="shipping-bar-text">
+        <span id="shippingBarMsg">🎉 You've unlocked <strong>Free Express Delivery</strong> across Kerala!</span>
+      </div>
+      <div class="shipping-progress-track">
+        <div class="shipping-progress-fill" style="width: 100%;"></div>
+      </div>
+    </div>
+
+    <!-- Cart Items List -->
+    <div class="cart-items-container" id="cartItemsList">
+      <!-- Default item rendered via JS -->
+    </div>
+
+    <!-- Cart Footer & Checkout -->
+    <div class="cart-drawer-footer">
+      <div class="cart-summary-line">
+        <span class="summary-label">Subtotal</span>
+        <span class="summary-amount" id="cartSubtotal">₹990</span>
+      </div>
+      <div class="cart-shipping-note">
+        <span>Taxes and doorstep shipping calculated at checkout.</span>
+      </div>
+      <button class="btn btn-navy-checkout" id="cartCheckoutBtn">
+        PROCEED TO CHECKOUT &bull; <span id="checkoutTotal">₹990</span>
+      </button>
+      <div class="cart-trust-badges">
+        <span>🔒 256-bit Secure Checkout</span>
+        <span>•</span>
+        <span>🚚 Kerala Fast Delivery</span>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ================= PRODUCT QUICK-VIEW MODAL ================= -->
+  <div class="modal-backdrop" id="productModalBackdrop"></div>
+  <div class="product-modal" id="productModal" role="dialog" aria-modal="true">
+    <button class="modal-close-btn" id="modalCloseBtn" aria-label="Close Product Details">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <line x1="18" y1="6" x2="6" y2="18"></line>
+        <line x1="6" y1="6" x2="18" y2="18"></line>
+      </svg>
+    </button>
+    <div class="modal-content-grid" id="modalContentGrid">
+      <!-- Rendered dynamically via JS for 1000mg / 500mg -->
+    </div>
+  </div>
+
+  <!-- ================= PHARMACY LOCATOR MODAL ================= -->
+  <div class="modal-backdrop" id="pharmacyModalBackdrop"></div>
+  <div class="pharmacy-modal" id="pharmacyModal" role="dialog" aria-modal="true">
+    <div class="pharmacy-modal-header">
+      <div class="modal-title-wrap">
+        <span class="modal-eyebrow">NEIGHBOURHOOD PHARMACIES</span>
+        <h3 class="modal-heading">Find BlueFin in Kerala</h3>
+      </div>
+      <button class="modal-close-btn" id="pharmacyModalCloseBtn" aria-label="Close Pharmacy Locator">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+
+    <div class="pharmacy-modal-body">
+      <div class="pharmacy-filter-row">
+        <label for="districtSelect" class="filter-label">Select District:</label>
+        <select id="districtSelect" class="district-select">
+          <option value="kochi">Ernakulam / Kochi (48 Pharmacies)</option>
+          <option value="tvm">Thiruvananthapuram (36 Pharmacies)</option>
+          <option value="kozhikode">Kozhikode (32 Pharmacies)</option>
+          <option value="thrissur">Thrissur (28 Pharmacies)</option>
+          <option value="kottayam">Kottayam (22 Pharmacies)</option>
+          <option value="kannur">Kannur (18 Pharmacies)</option>
+        </select>
+      </div>
+
+      <div class="pharmacies-list" id="pharmaciesList">
+        <!-- Rendered dynamically -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <!-- JavaScript -->
+  <script type="module" src="./main.js"></script>
+</body>
+</html>
