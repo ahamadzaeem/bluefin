@@ -1,5 +1,5 @@
 'use client';
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 const FRAME_COUNT = 120;
 const getFrameSrc = (i: number) =>
@@ -9,8 +9,13 @@ export default function HeroSection() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const imagesRef = useRef<HTMLImageElement[]>([]);
   const sectionRef = useRef<HTMLElement>(null);
+  const [loading, setLoading] = useState(true);
+  const [progress, setProgress] = useState(0);
 
   useEffect(() => {
+    // Disable scroll while loading
+    document.body.style.overflow = 'hidden';
+
     const canvas = canvasRef.current;
     if (!canvas) return;
     const ctx = canvas.getContext('2d');
@@ -21,13 +26,26 @@ export default function HeroSection() {
 
     const images: HTMLImageElement[] = [];
     let loaded = 0;
+    const startTime = Date.now();
 
     for (let i = 0; i < FRAME_COUNT; i++) {
       const img = new Image();
       img.src = getFrameSrc(i);
       img.onload = () => {
         loaded++;
+        setProgress(Math.round((loaded / FRAME_COUNT) * 100));
         if (loaded === 1) ctx.drawImage(images[0], 0, 0, canvas.width, canvas.height);
+        
+        // Hide loader once all frames are loaded, ensuring at least a 3-second wait
+        if (loaded === FRAME_COUNT) {
+          const timeElapsed = Date.now() - startTime;
+          const remainingTime = Math.max(0, 3000 - timeElapsed);
+          
+          setTimeout(() => {
+            setLoading(false);
+            document.body.style.overflow = 'auto';
+          }, remainingTime);
+        }
       };
       images.push(img);
     }
@@ -66,7 +84,24 @@ export default function HeroSection() {
   }, []);
 
   return (
-    <section className="hero-section" id="hero" ref={sectionRef}>
+    <>
+      {/* Loading Overlay */}
+      <div 
+        style={{
+          position: 'fixed', inset: 0, zIndex: 99999, 
+          backgroundColor: '#011221', display: 'flex', flexDirection: 'column', 
+          alignItems: 'center', justifyContent: 'center', 
+          opacity: loading ? 1 : 0, pointerEvents: loading ? 'all' : 'none',
+          transition: 'opacity 0.6s ease-out'
+        }}
+      >
+        <img src="/assets/logo.png" alt="BlueFin" style={{ width: '80px', marginBottom: '2rem', filter: 'brightness(0) invert(1)' }} />
+        <div style={{ width: '200px', height: '2px', backgroundColor: 'rgba(255,255,255,0.1)', borderRadius: '4px', overflow: 'hidden' }}>
+          <div style={{ height: '100%', width: `${progress}%`, backgroundColor: '#38bdf8', transition: 'width 0.1s linear' }} />
+        </div>
+      </div>
+
+      <section className="hero-section" id="hero" ref={sectionRef}>
       <div className="hero-sticky-wrap">
         {/* Background Canvas */}
         <div className="hero-bg-media">
@@ -83,15 +118,13 @@ export default function HeroSection() {
 
           {/* Title — "family wellness." is cyan */}
           <h1 className="hero-title">
-            Pure Omega-3.<br />
-            Made for everyday<br />
-            <span className="cyan-line">family wellness.</span>
+            The foundation for your family&apos;s <span className="cyan-line">wellness.</span>
           </h1>
 
           {/* Subtitle */}
           <p className="hero-subtitle">
             Responsibly sourced from deep cold waters.<br />
-            Carefully processed and expertly capsulated.
+            Expertly capsulated for maximum purity and absorption.
           </p>
 
           {/* CTAs */}
@@ -129,6 +162,7 @@ export default function HeroSection() {
         </div>
       </div>
     </section>
+    </>
   );
 }
 
