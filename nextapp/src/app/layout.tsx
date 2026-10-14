@@ -7,10 +7,18 @@ export const metadata: Metadata = {
   keywords: 'BlueFin, Omega 3, fish oil, EPA, DHA, family wellness, 1000mg fish oil, 500mg fish oil, Kerala pharmacies, Amazon',
 };
 
+import { CartProvider } from '@/context/CartContext';
+import CartDrawer from '@/components/CartDrawer';
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <CartProvider>
+          {children}
+          <CartDrawer />
+        </CartProvider>
+      </body>
     </html>
   );
 }
