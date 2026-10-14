@@ -5,9 +5,11 @@
   "type": "module",
   "private": true,
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview"
+    "dev": "npm run dev --prefix nextapp",
+    "build": "npm run build --prefix nextapp",
+    "start": "npm run start --prefix nextapp",
+    "dev:vite": "vite",
+    "build:vite": "vite build"
   },
   "devDependencies": {
     "puppeteer": "^25.12.0",

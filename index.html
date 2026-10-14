@@ -96,94 +96,138 @@
   </header>
 
   <!-- ================= SECTION 1 — HERO ================= -->
-  <section class="hero-section" id="hero" style="min-height: 400vh; padding: 0; display: block; background: #011424; overflow: visible;">
-    <div class="hero-sticky-wrap" style="position: sticky; top: 0; height: 100vh; width: 100%; display: flex; align-items: center; justify-content: center; overflow: hidden; padding-top: 5rem;">
-      <!-- Cinematic Full-Bleed Master Visual -->
+  <!-- ================= SECTION 1 — HERO ================= -->
+  <section class="hero-section" id="hero">
+    <div class="hero-sticky-wrap">
+      <!-- Cinematic Full-Bleed Master Visual — Always clear and luminous -->
       <div class="hero-bg-media">
-        <canvas id="hero-scroll-canvas" class="hero-bg-img" style="object-fit: cover; width: 100%; height: 100%;"></canvas>
+        <canvas id="hero-scroll-canvas" class="hero-canvas"></canvas>
         <div class="hero-bg-overlay"></div>
       </div>
-    <div class="hero-sun-glare"></div>
 
-    <div class="hero-container">
-      <!-- Left Column: Copy & CTAs -->
-      <div class="hero-left">
-        <div class="hero-eyebrow">
-          <span class="eyebrow-dot"></span>
-          PURE OMEGA-3, BRIGHTER TOMORROWS.
-        </div>
-
-        <h1 class="hero-title">
-          Omega-3 for<br>
-          everyday<br>
-          family wellness.
-        </h1>
-
-        <p class="hero-subtitle">
-          Responsibly sourced. Carefully processed. Expertly capsulated.
-        </p>
-
-        <div class="hero-cta-group">
-          <a href="#products" class="btn btn-white" id="heroShopBtn">
-            SHOP OMEGA-3
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <line x1="5" y1="12" x2="19" y2="12"></line>
-              <polyline points="12 5 19 12 12 19"></polyline>
-            </svg>
-          </a>
-          <a href="#difference" class="btn btn-frosted" id="heroExploreBtn">
-            EXPLORE BLUEFIN
-          </a>
-        </div>
-
-        <!-- 3 Feature Badges with Icons -->
-        <div class="hero-features-row">
-          <div class="hero-feature-item">
-            <div class="feature-icon-box">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M2 12c4-4 8 0 12-4 3-2 6-1 8 1-3 4-7 5-11 3-3 2-6 1-9 0"></path>
-                <path d="M7 16c2 1 5 1 8-1"></path>
-              </svg>
-            </div>
-            <span class="feature-label">Responsibly<br>Sourced</span>
-          </div>
-
-          <div class="feature-divider"></div>
-
-          <div class="hero-feature-item">
-            <div class="feature-icon-box">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"></path>
-                <path d="M12 8a4 4 0 0 0-4 4"></path>
-              </svg>
-            </div>
-            <span class="feature-label">Carefully<br>Processed</span>
-          </div>
-
-          <div class="feature-divider"></div>
-
-          <div class="hero-feature-item">
-            <div class="feature-icon-box">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                <rect x="5" y="4" width="14" height="16" rx="7" transform="rotate(-30 12 12)"></rect>
-                <line x1="8" y1="8" x2="16" y2="16"></line>
-              </svg>
-            </div>
-            <span class="feature-label">Expertly<br>Capsuled</span>
-          </div>
-        </div>
+      <!-- Stepper Navigation Pills -->
+      <div class="hero-stepper-nav" aria-label="Timeline navigation">
+        <button type="button" class="hero-stepper-btn active" id="stepperBtn1" aria-label="Step 1: Pristine Origin">
+          <span class="stepper-idx">01</span>
+          <span class="stepper-text">Origin</span>
+          <span class="stepper-track"><span id="stepper-fill-1" class="stepper-thumb"></span></span>
+        </button>
+        <button type="button" class="hero-stepper-btn" id="stepperBtn2" aria-label="Step 2: Molecular Distillation">
+          <span class="stepper-idx">02</span>
+          <span class="stepper-text">Purification</span>
+          <span class="stepper-track"><span id="stepper-fill-2" class="stepper-thumb"></span></span>
+        </button>
+        <button type="button" class="hero-stepper-btn" id="stepperBtn3" aria-label="Step 3: Family Wellness">
+          <span class="stepper-idx">03</span>
+          <span class="stepper-text">Wellness</span>
+          <span class="stepper-track"><span id="stepper-fill-3" class="stepper-thumb"></span></span>
+        </button>
       </div>
 
-      <!-- Right Column: Photorealistic Bottle on Ocean Rocks -->
-      <div class="hero-right">
-        <div class="hero-bottle-wrap" id="heroBottleWrap">
-          <div class="bottle-glow-halo"></div>
-          <img src="./assets/hero_bottle.jpg" alt="BlueFin Omega-3 Fish Oil 1000 MG Bottle resting on ocean rocks with water spray" class="hero-bottle-img" id="heroBottleImg">
-          <div class="water-spray-particle p1"></div>
-          <div class="water-spray-particle p2"></div>
-          <div class="water-spray-particle p3"></div>
+      <!-- 3-Part Dynamic Text Container — positioned on the left, never hindering the bottle -->
+      <div class="hero-container">
+        <!-- PART 1: ORIGIN -->
+        <div class="hero-step hero-step-1" id="heroStep1" style="opacity: 1; transform: translateY(0);">
+          <div class="hero-eyebrow">
+            <span class="eyebrow-pill">01 // ORIGIN</span>
+            <span class="eyebrow-label-text">PRISTINE DEEP WATERS</span>
+          </div>
+          <h2 class="hero-title">
+            Untouched cold waters.<br>
+            <span class="cyan-line">Pure by nature.</span>
+          </h2>
+          <p class="hero-subtitle">
+            Responsibly harvested from clean sub-zero pelagic waters, naturally rich in potent Omega-3 fatty acids and shielded from coastal pollutants.
+          </p>
+          <div class="hero-step-tags">
+            <span class="step-tag">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg>
+              Sub-Zero Pelagic Waters
+            </span>
+            <span class="step-tag">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="m4.93 4.93 4.24 4.24"/></svg>
+              Wild-Caught Purity
+            </span>
+          </div>
+        </div>
 
+        <!-- PART 2: PURIFICATION -->
+        <div class="hero-step hero-step-2" id="heroStep2" style="opacity: 0; transform: translateY(24px); pointer-events: none;">
+          <div class="hero-eyebrow">
+            <span class="eyebrow-pill">02 // EXTRACTION</span>
+            <span class="eyebrow-label-text">MOLECULAR DISTILLATION</span>
+          </div>
+          <h2 class="hero-title">
+            Triple-purified.<br>
+            <span class="cyan-line">Zero fishy aftertaste.</span>
+          </h2>
+          <p class="hero-subtitle">
+            Cold-distilled at the molecular level to remove heavy metals, mercury, and odors while locking in maximum bioavailable EPA &amp; DHA potency.
+          </p>
+          <div class="hero-step-tags">
+            <span class="step-tag">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+              Zero Fishy Burps
+            </span>
+            <span class="step-tag">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              Heavy Metals Tested
+            </span>
+          </div>
+        </div>
 
+        <!-- PART 3: FAMILY WELLNESS & ACTION -->
+        <div class="hero-step hero-step-3" id="heroStep3" style="opacity: 0; transform: translateY(28px); pointer-events: none;">
+          <div class="hero-eyebrow">
+            <span class="eyebrow-pill">03 // VITALITY</span>
+            <span class="eyebrow-label-text">PURE OMEGA-3</span>
+          </div>
+          <h1 class="hero-title">
+            The foundation for your family&apos;s <span class="cyan-line">wellness.</span>
+          </h1>
+          <p class="hero-subtitle">
+            Responsibly sourced from deep cold waters.<br>
+            Expertly capsulated for maximum purity and daily vitality.
+          </p>
+          <div class="hero-cta-group">
+            <a href="#products" class="btn btn-white" id="heroShopBtn">
+              SHOP OMEGA-3
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </a>
+            <a href="#difference" class="btn btn-frosted" id="heroExploreBtn">EXPLORE BLUEFIN</a>
+          </div>
+          <div class="hero-features-row">
+            <div class="hero-feature-item">
+              <div class="feature-icon-box">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M2 12c4-4 8 0 12-4 3-2 6-1 8 1-3 4-7 5-11 3-3 2-6 1-9 0"></path>
+                  <path d="M7 16c2 1 5 1 8-1"></path>
+                </svg>
+              </div>
+              <span class="feature-label">Responsibly<br>Sourced</span>
+            </div>
+            <div class="hero-feature-item">
+              <div class="feature-icon-box">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"></path>
+                  <path d="M12 8a4 4 0 0 0-4 4"></path>
+                </svg>
+              </div>
+              <span class="feature-label">Carefully<br>Processed</span>
+            </div>
+            <div class="hero-feature-item">
+              <div class="feature-icon-box">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="5" y="4" width="14" height="16" rx="7" transform="rotate(-30 12 12)"></rect>
+                  <line x1="8" y1="8" x2="16" y2="16"></line>
+                </svg>
+              </div>
+              <span class="feature-label">Expertly<br>Capsuled</span>
+            </div>
+          </div>
         </div>
       </div>
     </div>

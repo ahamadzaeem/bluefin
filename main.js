@@ -492,9 +492,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const context = canvas.getContext('2d');
     const frameCount = 120;
     
-    // Set canvas dimensions (matches 720p 16:9)
-    canvas.width = 1280;
-    canvas.height = 720;
+    // Set canvas dimensions (matches 1080p 16:9)
+    canvas.width = 1920;
+    canvas.height = 1080;
     
     const currentFrame = index => (
       `/hero_frames/frame_${(index + 1).toString().padStart(4, '0')}.jpg`
@@ -517,6 +517,23 @@ document.addEventListener('DOMContentLoaded', () => {
       };
     }
     
+    // Hook stepper button clicks
+    const scrollToStep = (stepIdx) => {
+      const heroSection = document.getElementById('hero');
+      if (!heroSection) return;
+      const maxScroll = heroSection.offsetHeight - window.innerHeight;
+      const targets = [0, maxScroll * 0.45, maxScroll * 0.88];
+      const targetY = heroSection.offsetTop + targets[stepIdx];
+      window.scrollTo({ top: targetY, behavior: 'smooth' });
+    };
+
+    const sBtn1 = document.getElementById('stepperBtn1');
+    const sBtn2 = document.getElementById('stepperBtn2');
+    const sBtn3 = document.getElementById('stepperBtn3');
+    if (sBtn1) sBtn1.addEventListener('click', () => scrollToStep(0));
+    if (sBtn2) sBtn2.addEventListener('click', () => scrollToStep(1));
+    if (sBtn3) sBtn3.addEventListener('click', () => scrollToStep(2));
+
     const updateScrollAnimation = () => {
       const heroSection = document.getElementById('hero');
       if (!heroSection) return;
@@ -538,31 +555,111 @@ document.addEventListener('DOMContentLoaded', () => {
           context.drawImage(images[frameIndex], 0, 0, canvas.width, canvas.height);
         }
         
-        // Handle text and overlay opacity
-        const overlay = document.querySelector('.hero-bg-overlay');
-        const glare = document.querySelector('.hero-sun-glare');
-        const content = document.querySelector('.hero-container');
-        const header = document.getElementById('siteHeader');
-        
-        let opacity = 0;
-        // Start fading in around frame 90, fully visible by frame 105
-        if (frameIndex > 90) {
-          opacity = Math.min(1, (frameIndex - 90) / 15);
+        // 3-Part Split Text interpolation
+        // Step 1: 0.00 to 0.30 (Origin)
+        let s1Opacity = 0;
+        let s1Y = 0;
+        if (scrollFraction <= 0.22) {
+          s1Opacity = 1;
+          s1Y = 0;
+        } else if (scrollFraction < 0.30) {
+          const t = (scrollFraction - 0.22) / 0.08;
+          s1Opacity = 1 - t;
+          s1Y = -24 * t;
+        } else {
+          s1Opacity = 0;
+          s1Y = -24;
         }
-        
-        if (overlay) overlay.style.opacity = opacity;
-        if (glare) glare.style.opacity = opacity;
-        
-        if (content) {
-            content.style.opacity = opacity;
-            content.style.transform = `translateY(${(1 - opacity) * 30}px)`;
-            // Ensure pointer events are disabled when hidden so buttons don't block clicks
-            content.style.pointerEvents = opacity > 0.5 ? 'auto' : 'none';
+
+        // Step 2: 0.30 to 0.65 (Extraction & Purity)
+        let s2Opacity = 0;
+        let s2Y = 24;
+        if (scrollFraction < 0.30) {
+          s2Opacity = 0;
+          s2Y = 24;
+        } else if (scrollFraction < 0.38) {
+          const t = (scrollFraction - 0.30) / 0.08;
+          s2Opacity = t;
+          s2Y = 24 * (1 - t);
+        } else if (scrollFraction <= 0.57) {
+          s2Opacity = 1;
+          s2Y = 0;
+        } else if (scrollFraction < 0.65) {
+          const t = (scrollFraction - 0.57) / 0.08;
+          s2Opacity = 1 - t;
+          s2Y = -24 * t;
+        } else {
+          s2Opacity = 0;
+          s2Y = -24;
         }
-        
-        if (header) {
-            header.style.opacity = opacity;
-            header.style.pointerEvents = opacity > 0.5 ? 'auto' : 'none';
+
+        // Step 3: 0.65 to 1.00 (Family Wellness & CTAs)
+        let s3Opacity = 0;
+        let s3Y = 28;
+        if (scrollFraction < 0.65) {
+          s3Opacity = 0;
+          s3Y = 28;
+        } else if (scrollFraction < 0.75) {
+          const t = (scrollFraction - 0.65) / 0.10;
+          s3Opacity = t;
+          s3Y = 28 * (1 - t);
+        } else {
+          s3Opacity = 1;
+          s3Y = 0;
+        }
+
+        const step1 = document.getElementById('heroStep1');
+        const step2 = document.getElementById('heroStep2');
+        const step3 = document.getElementById('heroStep3');
+
+        if (step1) {
+          step1.style.opacity = s1Opacity;
+          step1.style.transform = `translateY(${s1Y}px)`;
+          step1.style.pointerEvents = s1Opacity > 0.5 ? 'auto' : 'none';
+        }
+        if (step2) {
+          step2.style.opacity = s2Opacity;
+          step2.style.transform = `translateY(${s2Y}px)`;
+          step2.style.pointerEvents = s2Opacity > 0.5 ? 'auto' : 'none';
+        }
+        if (step3) {
+          step3.style.opacity = s3Opacity;
+          step3.style.transform = `translateY(${s3Y}px)`;
+          step3.style.pointerEvents = s3Opacity > 0.5 ? 'auto' : 'none';
+        }
+
+        // Stepper button active state
+        if (sBtn1 && sBtn2 && sBtn3) {
+          if (scrollFraction < 0.30) {
+            sBtn1.classList.add('active');
+            sBtn2.classList.remove('active');
+            sBtn3.classList.remove('active');
+          } else if (scrollFraction < 0.65) {
+            sBtn1.classList.remove('active');
+            sBtn2.classList.add('active');
+            sBtn3.classList.remove('active');
+          } else {
+            sBtn1.classList.remove('active');
+            sBtn2.classList.remove('active');
+            sBtn3.classList.add('active');
+          }
+        }
+
+        // Stepper fill width
+        const bar1 = document.getElementById('stepper-fill-1');
+        const bar2 = document.getElementById('stepper-fill-2');
+        const bar3 = document.getElementById('stepper-fill-3');
+        if (bar1) {
+          const p1 = Math.min(100, Math.max(0, (scrollFraction / 0.30) * 100));
+          bar1.style.width = `${p1}%`;
+        }
+        if (bar2) {
+          const p2 = Math.min(100, Math.max(0, ((scrollFraction - 0.30) / 0.35) * 100));
+          bar2.style.width = `${p2}%`;
+        }
+        if (bar3) {
+          const p3 = Math.min(100, Math.max(0, ((scrollFraction - 0.65) / 0.35) * 100));
+          bar3.style.width = `${p3}%`;
         }
       });
     };
