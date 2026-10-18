@@ -48,8 +48,14 @@ export default function CartDrawer() {
         </div>
 
         <div className="cart-shipping-bar">
-          <div className="shipping-bar-text">
-            🎉 You&apos;ve unlocked <strong>Free Express Delivery</strong> across Kerala!
+          <div className="shipping-bar-text" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.45rem' }}>
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#0284c7" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <rect x="1" y="3" width="15" height="13" rx="2" />
+              <polygon points="16 8 20 8 23 11 23 16 16 16 16 8" />
+              <circle cx="5.5" cy="18.5" r="2.5" />
+              <circle cx="18.5" cy="18.5" r="2.5" />
+            </svg>
+            <span>You&apos;ve unlocked <strong>Free Express Delivery</strong> across Kerala!</span>
           </div>
           <div className="shipping-progress-track">
             <div className="shipping-progress-fill" style={{ width: '100%' }} />

@@ -101,7 +101,7 @@ export default function FAQPage() {
               style={{
                 display: 'inline-flex',
                 alignItems: 'center',
-                gap: '1.5rem',
+                gap: '1.25rem',
                 background: 'rgba(7, 33, 54, 0.75)',
                 backdropFilter: 'blur(12px)',
                 border: '1px solid rgba(255, 255, 255, 0.15)',
@@ -111,7 +111,12 @@ export default function FAQPage() {
                 color: '#cbd5e1'
               }}
             >
-              <span>🔍 9 Common Questions Answered</span>
+              <span style={{ display: 'inline-flex', alignItems: 'center', gap: '0.45rem' }}>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <circle cx="11" cy="11" r="8" /><line x1="21" y1="21" x2="16.65" y2="16.65" />
+                </svg>
+                9 Common Questions Answered
+              </span>
               <span style={{ color: 'rgba(255,255,255,0.3)' }}>|</span>
               <span style={{ color: '#38bdf8' }}>✓ Pharmacist Verified</span>
             </div>
@@ -234,7 +239,11 @@ export default function FAQPage() {
                 boxShadow: '0 10px 30px rgba(0, 30, 60, 0.05)'
               }}
             >
-              <div style={{ fontSize: '2.5rem', marginBottom: '1rem' }}>💬</div>
+              <div style={{ width: '56px', height: '56px', borderRadius: '16px', background: 'rgba(2, 132, 199, 0.08)', border: '1px solid rgba(2, 132, 199, 0.18)', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 1.25rem' }}>
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#0284c7" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
+                </svg>
+              </div>
               <h3 style={{ fontFamily: 'var(--font-serif)', fontSize: '1.75rem', color: '#072136', marginBottom: '0.75rem' }}>
                 Need personalized guidance?
               </h3>

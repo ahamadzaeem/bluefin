@@ -134,7 +134,12 @@ export default function WhyBlueFinPage() {
                   boxShadow: '0 4px 15px rgba(0, 30, 60, 0.03)'
                 }}
               >
-                <div style={{ fontSize: '2.5rem', marginBottom: '1.25rem' }}>🧊</div>
+                <div style={{ width: '48px', height: '48px', borderRadius: '12px', background: 'rgba(2, 132, 199, 0.08)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '1.5rem', border: '1px solid rgba(2, 132, 199, 0.15)' }}>
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0284c7" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M2 16s9-15 20-4c-4 2-8 3-12 1-3 2-6 2-8 3z" />
+                    <circle cx="18" cy="13" r="1" fill="#0284c7" />
+                  </svg>
+                </div>
                 <h3 style={{ fontFamily: 'var(--font-serif)', fontSize: '1.4rem', color: '#072136', marginBottom: '0.75rem' }}>
                   Pelagic Deep-Sea Catch
                 </h3>
@@ -152,7 +157,12 @@ export default function WhyBlueFinPage() {
                   boxShadow: '0 4px 15px rgba(0, 30, 60, 0.03)'
                 }}
               >
-                <div style={{ fontSize: '2.5rem', marginBottom: '1.25rem' }}>🔬</div>
+                <div style={{ width: '48px', height: '48px', borderRadius: '12px', background: 'rgba(2, 132, 199, 0.08)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '1.5rem', border: '1px solid rgba(2, 132, 199, 0.15)' }}>
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0284c7" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M10 2v7.31M14 9.3V1.99M8.5 2h7M14 9.3a6.5 6.5 0 1 1-4 0" />
+                    <circle cx="12" cy="15" r="1" fill="#0284c7" />
+                  </svg>
+                </div>
                 <h3 style={{ fontFamily: 'var(--font-serif)', fontSize: '1.4rem', color: '#072136', marginBottom: '0.75rem' }}>
                   Molecular Vacuum Distillation
                 </h3>
@@ -170,7 +180,12 @@ export default function WhyBlueFinPage() {
                   boxShadow: '0 4px 15px rgba(0, 30, 60, 0.03)'
                 }}
               >
-                <div style={{ fontSize: '2.5rem', marginBottom: '1.25rem' }}>🛡️</div>
+                <div style={{ width: '48px', height: '48px', borderRadius: '12px', background: 'rgba(2, 132, 199, 0.08)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '1.5rem', border: '1px solid rgba(2, 132, 199, 0.15)' }}>
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0284c7" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                    <path d="m9 12 2 2 4-4" />
+                  </svg>
+                </div>
                 <h3 style={{ fontFamily: 'var(--font-serif)', fontSize: '1.4rem', color: '#072136', marginBottom: '0.75rem' }}>
                   Targeted Enteric Release
                 </h3>
@@ -188,7 +203,12 @@ export default function WhyBlueFinPage() {
                   boxShadow: '0 4px 15px rgba(0, 30, 60, 0.03)'
                 }}
               >
-                <div style={{ fontSize: '2.5rem', marginBottom: '1.25rem' }}>🌿</div>
+                <div style={{ width: '48px', height: '48px', borderRadius: '12px', background: 'rgba(2, 132, 199, 0.08)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '1.5rem', border: '1px solid rgba(2, 132, 199, 0.15)' }}>
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0284c7" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z" />
+                    <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12" />
+                  </svg>
+                </div>
                 <h3 style={{ fontFamily: 'var(--font-serif)', fontSize: '1.4rem', color: '#072136', marginBottom: '0.75rem' }}>
                   Freshness Guaranteed
                 </h3>

@@ -137,29 +137,57 @@ export default function ShopPage() {
                 border: '1px solid rgba(226, 232, 240, 0.8)'
               }}
             >
-              <div style={{ display: 'flex', alignItems: 'center', gap: '0.85rem' }}>
-                <span style={{ fontSize: '1.5rem' }}>🌊</span>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+                <div style={{ width: '42px', height: '42px', borderRadius: '10px', background: 'rgba(2, 132, 199, 0.08)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0284c7" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M2 12c3-4 6-4 9 0 3-4 6-4 9 0" />
+                    <path d="M2 16c3-4 6-4 9 0 3-4 6-4 9 0" />
+                  </svg>
+                </div>
                 <div>
                   <div style={{ fontWeight: 600, fontSize: '0.9rem', color: '#072136' }}>Wild Pelagic Source</div>
                   <div style={{ fontSize: '0.78rem', color: '#64748b' }}>Sub-zero Arctic fisheries</div>
                 </div>
               </div>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '0.85rem' }}>
-                <span style={{ fontSize: '1.5rem' }}>✨</span>
+
+              <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+                <div style={{ width: '42px', height: '42px', borderRadius: '10px', background: 'rgba(2, 132, 199, 0.08)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0284c7" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                    <path d="m9 12 2 2 4-4" />
+                  </svg>
+                </div>
                 <div>
                   <div style={{ fontWeight: 600, fontSize: '0.9rem', color: '#072136' }}>Zero Fishy Burps</div>
                   <div style={{ fontSize: '0.78rem', color: '#64748b' }}>Delayed-release enteric casing</div>
                 </div>
               </div>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '0.85rem' }}>
-                <span style={{ fontSize: '1.5rem' }}>🚚</span>
+
+              <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+                <div style={{ width: '42px', height: '42px', borderRadius: '10px', background: 'rgba(2, 132, 199, 0.08)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0284c7" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                    <rect x="1" y="3" width="15" height="13" rx="2" />
+                    <polygon points="16 8 20 8 23 11 23 16 16 16 16 8" />
+                    <circle cx="5.5" cy="18.5" r="2.5" />
+                    <circle cx="18.5" cy="18.5" r="2.5" />
+                  </svg>
+                </div>
                 <div>
                   <div style={{ fontWeight: 600, fontSize: '0.9rem', color: '#072136' }}>Free Express Delivery</div>
                   <div style={{ fontSize: '0.78rem', color: '#64748b' }}>Across all 14 Kerala districts</div>
                 </div>
               </div>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '0.85rem' }}>
-                <span style={{ fontSize: '1.5rem' }}>🔬</span>
+
+              <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+                <div style={{ width: '42px', height: '42px', borderRadius: '10px', background: 'rgba(2, 132, 199, 0.08)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0284c7" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M6 18h12" />
+                    <path d="M3 22h18" />
+                    <path d="M14 22a7 7 0 1 0-4 0" />
+                    <path d="M9 14h6" />
+                    <path d="M12 6v8" />
+                  </svg>
+                </div>
                 <div>
                   <div style={{ fontWeight: 600, fontSize: '0.9rem', color: '#072136' }}>GMP Certified</div>
                   <div style={{ fontSize: '0.78rem', color: '#64748b' }}>Third-party lab tested</div>
