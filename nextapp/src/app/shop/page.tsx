@@ -63,17 +63,132 @@ export default function ShopPage() {
 
       <main>
         {/* HERO BANNER */}
-        <section className="subpage-hero">
-          <div className="subpage-hero-container">
-            <div className="subpage-breadcrumb">
-              <Link href="/">Home</Link>
-              <span>/</span>
-              <span>Shop Formulations</span>
+        <section className="subpage-hero-wrapper">
+          <img
+            src="/assets/hero_shop.jpg"
+            alt="Deep ocean water with golden sunlight caustics"
+            className="subpage-hero-bg"
+          />
+          <div className="subpage-hero-overlay overlay-shop" />
+
+          <div className="subpage-hero-content">
+            <div className="shop-hero-grid">
+              {/* Left Column: Editorial & Info */}
+              <div>
+                <div className="subpage-breadcrumb">
+                  <Link href="/">Home</Link>
+                  <span>/</span>
+                  <span>Shop Formulations</span>
+                </div>
+
+                <div className="hero-badge-pill">
+                  <span>✨</span>
+                  <span>100% Wild Pelagic Marine Omega-3</span>
+                </div>
+
+                <h1 className="subpage-title">
+                  Pure Omega-3. Made for Everyday Life.
+                </h1>
+
+                <p className="subpage-subtitle" style={{ marginBottom: '2rem' }}>
+                  Sustainably caught pelagic fish oil, molecularly purified, and enteric-coated for maximum bio-absorption without fishy aftertaste. Delivered directly to your doorstep.
+                </p>
+
+                {/* Hero Feature Pills */}
+                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.75rem', marginBottom: '2rem' }}>
+                  <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.45rem', background: 'rgba(255,255,255,0.08)', backdropFilter: 'blur(10px)', border: '1px solid rgba(255,255,255,0.15)', padding: '0.45rem 0.9rem', borderRadius: '999px', fontSize: '0.8rem', color: '#e2e8f0' }}>
+                    <span style={{ color: '#38bdf8' }}>✓</span> Zero Fishy Burps
+                  </div>
+                  <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.45rem', background: 'rgba(255,255,255,0.08)', backdropFilter: 'blur(10px)', border: '1px solid rgba(255,255,255,0.15)', padding: '0.45rem 0.9rem', borderRadius: '999px', fontSize: '0.8rem', color: '#e2e8f0' }}>
+                    <span style={{ color: '#38bdf8' }}>✓</span> Cold Molecular Distillation
+                  </div>
+                  <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.45rem', background: 'rgba(255,255,255,0.08)', backdropFilter: 'blur(10px)', border: '1px solid rgba(255,255,255,0.15)', padding: '0.45rem 0.9rem', borderRadius: '999px', fontSize: '0.8rem', color: '#e2e8f0' }}>
+                    <span style={{ color: '#38bdf8' }}>✓</span> Free Kerala Express Shipping
+                  </div>
+                </div>
+
+                <div style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
+                  <a
+                    href="#card1000mg"
+                    className="btn btn-pill-nav"
+                    style={{ padding: '0.85rem 1.8rem', fontSize: '0.85rem' }}
+                  >
+                    SHOP 1000 MG →
+                  </a>
+                  <a
+                    href="#card500mg"
+                    className="btn"
+                    style={{
+                      padding: '0.85rem 1.6rem',
+                      fontSize: '0.85rem',
+                      background: 'rgba(255,255,255,0.1)',
+                      border: '1px solid rgba(255,255,255,0.25)',
+                      color: '#ffffff',
+                      borderRadius: '999px',
+                      textDecoration: 'none'
+                    }}
+                  >
+                    SHOP 500 MG
+                  </a>
+                </div>
+              </div>
+
+              {/* Right Column: Interactive Bottle Showcase Card */}
+              <div className="shop-hero-preview-card">
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.25rem' }}>
+                  <span style={{ fontSize: '0.72rem', letterSpacing: '0.12em', color: '#38bdf8', fontWeight: 700, textTransform: 'uppercase' }}>
+                    TWO TARGETED STRENGTHS
+                  </span>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.25rem', color: '#fbbf24', fontSize: '0.85rem' }}>
+                    ★★★★★ <span style={{ color: '#94a3b8', fontSize: '0.75rem', marginLeft: '0.25rem' }}>4.9/5</span>
+                  </div>
+                </div>
+
+                <div className="shop-hero-bottles-row">
+                  <div className="shop-hero-bottle-item">
+                    <img
+                      src="/assets/bottle_1_transparent.png"
+                      alt="BlueFin 1000 MG"
+                      className="shop-hero-bottle-img"
+                    />
+                    <div style={{ marginTop: '0.75rem', fontSize: '0.85rem', fontWeight: 600, color: '#ffffff' }}>
+                      1000 MG
+                    </div>
+                    <div style={{ fontSize: '0.75rem', color: '#38bdf8' }}>High Potency</div>
+                  </div>
+
+                  <div style={{ width: '1px', height: '140px', background: 'rgba(255,255,255,0.15)' }} />
+
+                  <div className="shop-hero-bottle-item">
+                    <img
+                      src="/assets/bottle_2_transparent.png"
+                      alt="BlueFin 500 MG"
+                      className="shop-hero-bottle-img"
+                    />
+                    <div style={{ marginTop: '0.75rem', fontSize: '0.85rem', fontWeight: 600, color: '#ffffff' }}>
+                      500 MG
+                    </div>
+                    <div style={{ fontSize: '0.75rem', color: '#38bdf8' }}>Gentle Everyday</div>
+                  </div>
+                </div>
+
+                <div
+                  style={{
+                    marginTop: '1.5rem',
+                    paddingTop: '1rem',
+                    borderTop: '1px solid rgba(255,255,255,0.1)',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'space-between',
+                    fontSize: '0.78rem',
+                    color: '#94a3b8'
+                  }}
+                >
+                  <span>🏥 500+ Kerala Pharmacies Stocked</span>
+                  <span style={{ color: '#38bdf8', fontWeight: 600 }}>Doctor Recommended</span>
+                </div>
+              </div>
             </div>
-            <h1 className="subpage-title">Pure Omega-3. Made for Everyday Life.</h1>
-            <p className="subpage-subtitle">
-              Sustainably caught pelagic fish oil, molecularly purified, and enteric-coated for maximum bio-absorption without fishy aftertaste.
-            </p>
           </div>
         </section>
 

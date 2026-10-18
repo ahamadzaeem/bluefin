@@ -838,29 +838,85 @@ ul { list-style: none; }
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-.subpage-hero {
+.subpage-hero-wrapper {
   position: relative;
-  padding-top: 9.5rem;
+  min-height: 480px;
+  display: flex;
+  align-items: center;
+  padding-top: 8.5rem;
   padding-bottom: 5rem;
-  background: radial-gradient(circle at 50% 20%, rgba(30, 80, 130, 0.4) 0%, rgba(4, 18, 32, 1) 75%);
-  text-align: center;
-  color: white;
   overflow: hidden;
+  color: white;
 }
-.subpage-hero::before {
-  content: '';
+
+.subpage-hero-bg {
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle at 50% 0%, rgba(56, 189, 248, 0.18), transparent 65%);
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  z-index: 1;
+  transition: transform 8s ease;
+}
+
+.subpage-hero-wrapper:hover .subpage-hero-bg {
+  transform: scale(1.03);
+}
+
+.subpage-hero-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
   pointer-events: none;
 }
-.subpage-hero-container {
-  max-width: 920px;
+
+.overlay-shop {
+  background: linear-gradient(90deg, rgba(4, 18, 32, 0.96) 0%, rgba(4, 18, 32, 0.84) 48%, rgba(4, 18, 32, 0.55) 100%);
+}
+
+.overlay-why {
+  background: linear-gradient(180deg, rgba(4, 18, 32, 0.88) 0%, rgba(4, 18, 32, 0.48) 50%, rgba(4, 18, 32, 0.96) 100%);
+}
+
+.overlay-story {
+  background: linear-gradient(90deg, rgba(4, 18, 32, 0.95) 0%, rgba(7, 28, 48, 0.85) 55%, rgba(4, 18, 32, 0.6) 100%);
+}
+
+.overlay-wellness {
+  background: linear-gradient(135deg, rgba(4, 18, 32, 0.92) 0%, rgba(7, 33, 54, 0.72) 55%, rgba(2, 44, 76, 0.8) 100%);
+}
+
+.overlay-faq {
+  background: linear-gradient(180deg, rgba(4, 18, 32, 0.92) 0%, rgba(4, 18, 32, 0.65) 50%, rgba(4, 18, 32, 0.96) 100%);
+}
+
+.subpage-hero-content {
+  position: relative;
+  z-index: 3;
+  width: 100%;
+  max-width: 1240px;
   margin: 0 auto;
   padding: 0 1.5rem;
-  position: relative;
-  z-index: 2;
 }
+
+.hero-badge-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.35rem 0.95rem;
+  border-radius: 999px;
+  background: rgba(56, 189, 248, 0.12);
+  border: 1px solid rgba(56, 189, 248, 0.35);
+  color: #38bdf8;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 1.25rem;
+  backdrop-filter: blur(8px);
+}
+
 .subpage-breadcrumb {
   display: inline-flex;
   align-items: center;
@@ -869,7 +925,7 @@ ul { list-style: none; }
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--color-cyan-glow);
-  margin-bottom: 1.25rem;
+  margin-bottom: 0.85rem;
   font-weight: 600;
 }
 .subpage-breadcrumb a {
@@ -880,22 +936,68 @@ ul { list-style: none; }
 .subpage-breadcrumb a:hover {
   color: white;
 }
+
 .subpage-title {
   font-family: var(--font-serif);
-  font-size: clamp(2.5rem, 5vw, 4.25rem);
+  font-size: clamp(2.4rem, 4.8vw, 4rem);
   font-weight: 400;
   line-height: 1.15;
   margin-bottom: 1.25rem;
   letter-spacing: -0.02em;
   color: #ffffff;
 }
+
 .subpage-subtitle {
-  font-size: clamp(1.05rem, 2vw, 1.25rem);
-  color: #94a3b8;
+  font-size: clamp(1rem, 1.8vw, 1.2rem);
+  color: #cbd5e1;
   max-width: 680px;
-  margin: 0 auto;
   line-height: 1.6;
   font-weight: 300;
+}
+
+/* Shop Hero Split Grid */
+.shop-hero-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 3.5rem;
+  align-items: center;
+}
+
+.shop-hero-preview-card {
+  background: rgba(7, 33, 54, 0.65);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 24px;
+  padding: 2rem;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+  position: relative;
+  overflow: hidden;
+}
+
+.shop-hero-bottles-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  position: relative;
+}
+
+.shop-hero-bottle-item {
+  position: relative;
+  text-align: center;
+  flex: 1;
+}
+
+.shop-hero-bottle-img {
+  max-height: 220px;
+  object-fit: contain;
+  filter: drop-shadow(0 15px 25px rgba(0, 0, 0, 0.5));
+  transition: transform 0.3s ease;
+}
+
+.shop-hero-bottle-item:hover .shop-hero-bottle-img {
+  transform: translateY(-6px);
 }
 
 /* Subpage Content Section */
@@ -913,4 +1015,15 @@ ul { list-style: none; }
   max-width: 1200px;
   margin: 0 auto;
 }
+
+@media (max-width: 992px) {
+  .shop-hero-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+  .overlay-shop, .overlay-story {
+    background: linear-gradient(180deg, rgba(4, 18, 32, 0.95) 0%, rgba(4, 18, 32, 0.85) 60%, rgba(4, 18, 32, 0.95) 100%);
+  }
+}
+
 

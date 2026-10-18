@@ -34,17 +34,61 @@ export default function OurStoryPage() {
 
       <main>
         {/* HERO BANNER */}
-        <section className="subpage-hero">
-          <div className="subpage-hero-container">
-            <div className="subpage-breadcrumb">
-              <Link href="/">Home</Link>
-              <span>/</span>
-              <span>Our Story</span>
+        <section className="subpage-hero-wrapper" style={{ minHeight: '500px' }}>
+          <img
+            src="/assets/hero_our_story.jpg"
+            alt="Tranquil coastal horizon at golden dawn with maritime heritage"
+            className="subpage-hero-bg"
+          />
+          <div className="subpage-hero-overlay overlay-story" />
+
+          <div className="subpage-hero-content">
+            <div className="shop-hero-grid" style={{ alignItems: 'center' }}>
+              <div>
+                <div className="subpage-breadcrumb">
+                  <Link href="/">Home</Link>
+                  <span>/</span>
+                  <span>Our Story</span>
+                </div>
+
+                <div className="hero-badge-pill">
+                  <span>🌊</span>
+                  <span>Coastal Roots &amp; Pharmacological Trust</span>
+                </div>
+
+                <h1 className="subpage-title">
+                  Born From a Legacy of Everyday Family Care.
+                </h1>
+
+                <p className="subpage-subtitle" style={{ color: '#e2e8f0' }}>
+                  BlueFin began with an honest conviction: the supplements you give your parents and children should be as pure and uncompromised as the ocean itself.
+                </p>
+              </div>
+
+              {/* Right: Glassmorphic Heritage Card */}
+              <div
+                style={{
+                  background: 'rgba(7, 33, 54, 0.72)',
+                  backdropFilter: 'blur(16px)',
+                  border: '1px solid rgba(255, 255, 255, 0.15)',
+                  borderRadius: '24px',
+                  padding: '2.25rem',
+                  boxShadow: '0 20px 45px rgba(0, 0, 0, 0.4)',
+                  position: 'relative'
+                }}
+              >
+                <div style={{ color: '#38bdf8', fontSize: '2rem', fontFamily: 'serif', lineHeight: 1, marginBottom: '0.5rem' }}>
+                  &ldquo;
+                </div>
+                <p style={{ fontFamily: 'var(--font-serif)', fontSize: '1.25rem', color: '#ffffff', lineHeight: 1.5, marginBottom: '1.25rem' }}>
+                  Health is not about emergency medicine; it is the quiet daily habit that keeps three generations laughing and thriving together.
+                </p>
+                <div style={{ fontSize: '0.85rem', color: '#94a3b8', borderTop: '1px solid rgba(255,255,255,0.1)', paddingTop: '1rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                  <span style={{ fontWeight: 600, color: '#e2e8f0' }}>The BlueFin Family</span>
+                  <span style={{ color: '#38bdf8' }}>Cochin, Kerala</span>
+                </div>
+              </div>
             </div>
-            <h1 className="subpage-title">Born From a Legacy of Everyday Family Care.</h1>
-            <p className="subpage-subtitle">
-              BlueFin began with a simple conviction: the supplements you give your parents and children should be as pure and uncompromised as the ocean itself.
-            </p>
           </div>
         </section>
 

@@ -22,17 +22,101 @@ export default function WhyBlueFinPage() {
 
       <main>
         {/* HERO BANNER */}
-        <section className="subpage-hero">
-          <div className="subpage-hero-container">
-            <div className="subpage-breadcrumb">
+        <section className="subpage-hero-wrapper" style={{ minHeight: '520px', textAlign: 'center' }}>
+          <img
+            src="/assets/hero_why_bluefin.jpg"
+            alt="Pristine Arctic sub-zero waters with sunlight beam and golden oil droplet"
+            className="subpage-hero-bg"
+          />
+          <div className="subpage-hero-overlay overlay-why" />
+
+          <div className="subpage-hero-content" style={{ maxWidth: '960px' }}>
+            <div className="subpage-breadcrumb" style={{ justifyContent: 'center' }}>
               <Link href="/">Home</Link>
               <span>/</span>
               <span>Why BlueFin</span>
             </div>
-            <h1 className="subpage-title">Science-Backed Purity. No Compromise.</h1>
-            <p className="subpage-subtitle">
-              Most fish oils are rancid before they reach the shelf, causing indigestion and fishy burps. We engineered BlueFin from the ground up to solve every flaw in conventional Omega-3 supplements.
+
+            <div className="hero-badge-pill" style={{ margin: '0 auto 1.5rem' }}>
+              <span>🔬</span>
+              <span>Clinical Purity &amp; Bioavailability Standards</span>
+            </div>
+
+            <h1 className="subpage-title">
+              Science-Backed Purity. No Compromise.
+            </h1>
+
+            <p className="subpage-subtitle" style={{ margin: '0 auto 2.5rem', color: '#e2e8f0' }}>
+              Most fish oils oxidize before reaching pharmacy shelves, triggering indigestion and rancid fishy burps. We engineered BlueFin from sub-polar pelagic waters to solve every flaw of standard Omega-3s.
             </p>
+
+            {/* 3 Scientific Metric Chips */}
+            <div
+              style={{
+                display: 'grid',
+                gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
+                gap: '1.25rem',
+                maxWidth: '780px',
+                margin: '0 auto'
+              }}
+            >
+              <div
+                style={{
+                  background: 'rgba(7, 33, 54, 0.7)',
+                  backdropFilter: 'blur(12px)',
+                  border: '1px solid rgba(56, 189, 248, 0.3)',
+                  borderRadius: '16px',
+                  padding: '1.25rem 1.5rem',
+                  textAlign: 'center'
+                }}
+              >
+                <div style={{ fontFamily: 'var(--font-serif)', fontSize: '2rem', color: '#38bdf8', fontWeight: 600 }}>
+                  0%
+                </div>
+                <div style={{ fontSize: '0.8rem', fontWeight: 600, color: '#ffffff', marginTop: '0.25rem' }}>
+                  Heavy Metals &amp; Lead
+                </div>
+                <div style={{ fontSize: '0.72rem', color: '#94a3b8' }}>Triple vacuum distillation</div>
+              </div>
+
+              <div
+                style={{
+                  background: 'rgba(7, 33, 54, 0.7)',
+                  backdropFilter: 'blur(12px)',
+                  border: '1px solid rgba(56, 189, 248, 0.3)',
+                  borderRadius: '16px',
+                  padding: '1.25rem 1.5rem',
+                  textAlign: 'center'
+                }}
+              >
+                <div style={{ fontFamily: 'var(--font-serif)', fontSize: '2rem', color: '#38bdf8', fontWeight: 600 }}>
+                  100%
+                </div>
+                <div style={{ fontSize: '0.8rem', fontWeight: 600, color: '#ffffff', marginTop: '0.25rem' }}>
+                  Targeted Enteric Release
+                </div>
+                <div style={{ fontSize: '0.72rem', color: '#94a3b8' }}>Zero reflux or burps</div>
+              </div>
+
+              <div
+                style={{
+                  background: 'rgba(7, 33, 54, 0.7)',
+                  backdropFilter: 'blur(12px)',
+                  border: '1px solid rgba(56, 189, 248, 0.3)',
+                  borderRadius: '16px',
+                  padding: '1.25rem 1.5rem',
+                  textAlign: 'center'
+                }}
+              >
+                <div style={{ fontFamily: 'var(--font-serif)', fontSize: '2rem', color: '#38bdf8', fontWeight: 600 }}>
+                  300 MG
+                </div>
+                <div style={{ fontSize: '0.8rem', fontWeight: 600, color: '#ffffff', marginTop: '0.25rem' }}>
+                  Active EPA + DHA
+                </div>
+                <div style={{ fontSize: '0.72rem', color: '#94a3b8' }}>Per 1000mg Softgel</div>
+              </div>
+            </div>
           </div>
         </section>
 

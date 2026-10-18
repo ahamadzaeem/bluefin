@@ -80,17 +80,52 @@ export default function FAQPage() {
 
       <main>
         {/* HERO BANNER */}
-        <section className="subpage-hero">
-          <div className="subpage-hero-container">
-            <div className="subpage-breadcrumb">
+        <section className="subpage-hero-wrapper" style={{ minHeight: '500px', textAlign: 'center' }}>
+          <img
+            src="/assets/hero_faq.jpg"
+            alt="Tranquil deep ocean surface symbolizing serene clarity and medical trust"
+            className="subpage-hero-bg"
+          />
+          <div className="subpage-hero-overlay overlay-faq" />
+
+          <div className="subpage-hero-content" style={{ maxWidth: '920px' }}>
+            <div className="subpage-breadcrumb" style={{ justifyContent: 'center' }}>
               <Link href="/">Home</Link>
               <span>/</span>
               <span>FAQ Knowledge Base</span>
             </div>
-            <h1 className="subpage-title">Clear Answers. Zero Jargon.</h1>
-            <p className="subpage-subtitle">
-              Everything you need to know about our sourcing, enteric coating, zero-burp guarantee, and Kerala pharmacy availability.
+
+            <div className="hero-badge-pill" style={{ margin: '0 auto 1.5rem' }}>
+              <span>💡</span>
+              <span>Patient &amp; Customer Knowledge Center</span>
+            </div>
+
+            <h1 className="subpage-title">
+              Clear Answers. Zero Jargon.
+            </h1>
+
+            <p className="subpage-subtitle" style={{ margin: '0 auto 2rem', color: '#e2e8f0' }}>
+              Everything you need to know about our sub-polar pelagic catch, enteric zero-burp guarantee, and 500+ Kerala pharmacy network.
             </p>
+
+            <div
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '1.5rem',
+                background: 'rgba(7, 33, 54, 0.75)',
+                backdropFilter: 'blur(12px)',
+                border: '1px solid rgba(255, 255, 255, 0.15)',
+                borderRadius: '999px',
+                padding: '0.65rem 1.5rem',
+                fontSize: '0.82rem',
+                color: '#cbd5e1'
+              }}
+            >
+              <span>🔍 9 Common Questions Answered</span>
+              <span style={{ color: 'rgba(255,255,255,0.3)' }}>|</span>
+              <span style={{ color: '#38bdf8' }}>✓ Pharmacist Verified</span>
+            </div>
           </div>
         </section>
 

@@ -74,17 +74,74 @@ export default function WellnessPage() {
 
       <main>
         {/* HERO BANNER */}
-        <section className="subpage-hero">
-          <div className="subpage-hero-container">
-            <div className="subpage-breadcrumb">
+        <section className="subpage-hero-wrapper" style={{ minHeight: '520px', textAlign: 'center' }}>
+          <img
+            src="/assets/hero_wellness.jpg"
+            alt="Crystal clear wave crest in morning sunlight symbolizing health and vitality"
+            className="subpage-hero-bg"
+          />
+          <div className="subpage-hero-overlay overlay-wellness" />
+
+          <div className="subpage-hero-content" style={{ maxWidth: '960px' }}>
+            <div className="subpage-breadcrumb" style={{ justifyContent: 'center' }}>
               <Link href="/">Home</Link>
               <span>/</span>
-              <span>Wellness & Science</span>
+              <span>Wellness &amp; Science</span>
             </div>
-            <h1 className="subpage-title">The Foundation of Every Cell.</h1>
-            <p className="subpage-subtitle">
-              Your body cannot synthesize essential Omega-3 fatty acids on its own. Discover how daily EPA and DHA protect your heart, sharpen your brain, and preserve joint longevity.
+
+            <div className="hero-badge-pill" style={{ margin: '0 auto 1.5rem' }}>
+              <span>⚡</span>
+              <span>Essential Cellular Nutrition</span>
+            </div>
+
+            <h1 className="subpage-title">
+              The Foundation of Every Living Cell.
+            </h1>
+
+            <p className="subpage-subtitle" style={{ margin: '0 auto 2.5rem', color: '#e2e8f0' }}>
+              Your body cannot synthesize essential Omega-3 fatty acids on its own. Discover how daily marine EPA and DHA fortify cardiovascular stamina, mental focus, and lifelong joint mobility.
             </p>
+
+            {/* 5 Vitality Pillars Quick Links */}
+            <div
+              style={{
+                display: 'flex',
+                flexWrap: 'wrap',
+                gap: '0.85rem',
+                justifyContent: 'center',
+                maxWidth: '750px',
+                margin: '0 auto'
+              }}
+            >
+              {[
+                { icon: '🫀', label: 'Heart & Arteries' },
+                { icon: '🧠', label: 'Brain & Memory' },
+                { icon: '🏃', label: 'Joint Mobility' },
+                { icon: '👁️', label: 'Retinal Comfort' },
+                { icon: '✨', label: 'Cellular Hydration' }
+              ].map((pill, idx) => (
+                <div
+                  key={idx}
+                  style={{
+                    background: 'rgba(7, 33, 54, 0.72)',
+                    backdropFilter: 'blur(12px)',
+                    border: '1px solid rgba(255, 255, 255, 0.18)',
+                    borderRadius: '999px',
+                    padding: '0.6rem 1.25rem',
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: '0.5rem',
+                    fontSize: '0.85rem',
+                    fontWeight: 600,
+                    color: '#ffffff',
+                    boxShadow: '0 4px 15px rgba(0, 0, 0, 0.2)'
+                  }}
+                >
+                  <span>{pill.icon}</span>
+                  <span>{pill.label}</span>
+                </div>
+              ))}
+            </div>
           </div>
         </section>
 
