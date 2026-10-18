@@ -51,11 +51,6 @@ export default function OurStoryPage() {
                   <span>Our Story</span>
                 </div>
 
-                <div className="hero-badge-pill">
-                  <span>🌊</span>
-                  <span>Coastal Roots &amp; Pharmacological Trust</span>
-                </div>
-
                 <h1 className="subpage-title">
                   Born From a Legacy of Everyday Family Care.
                 </h1>

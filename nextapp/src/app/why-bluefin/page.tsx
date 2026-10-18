@@ -37,11 +37,6 @@ export default function WhyBlueFinPage() {
               <span>Why BlueFin</span>
             </div>
 
-            <div className="hero-badge-pill" style={{ margin: '0 auto 1.5rem' }}>
-              <span>🔬</span>
-              <span>Clinical Purity &amp; Bioavailability Standards</span>
-            </div>
-
             <h1 className="subpage-title">
               Science-Backed Purity. No Compromise.
             </h1>

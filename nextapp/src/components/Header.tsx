@@ -34,7 +34,7 @@ export default function Header({ cartCount: explicitCartCount }: { cartCount?: n
     >
       <div className="nav-container">
         <Link href="/" className="brand-logo" aria-label="BlueFin Home" style={{ textDecoration: 'none' }}>
-          <Logo className="text-white" invert={scrolled} />
+          <Logo className="text-white" invert={false} />
         </Link>
 
         <nav className="nav-menu" id="navMenu">

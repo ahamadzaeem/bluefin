@@ -89,11 +89,6 @@ export default function WellnessPage() {
               <span>Wellness &amp; Science</span>
             </div>
 
-            <div className="hero-badge-pill" style={{ margin: '0 auto 1.5rem' }}>
-              <span>⚡</span>
-              <span>Essential Cellular Nutrition</span>
-            </div>
-
             <h1 className="subpage-title">
               The Foundation of Every Living Cell.
             </h1>

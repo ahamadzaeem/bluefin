@@ -95,11 +95,6 @@ export default function FAQPage() {
               <span>FAQ Knowledge Base</span>
             </div>
 
-            <div className="hero-badge-pill" style={{ margin: '0 auto 1.5rem' }}>
-              <span>💡</span>
-              <span>Patient &amp; Customer Knowledge Center</span>
-            </div>
-
             <h1 className="subpage-title">
               Clear Answers. Zero Jargon.
             </h1>

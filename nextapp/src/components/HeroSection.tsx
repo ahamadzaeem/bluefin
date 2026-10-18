@@ -248,7 +248,7 @@ export default function HeroSection() {
             {/* PART 1: ORIGIN */}
             <div className="hero-step hero-step-1" ref={step1Ref} style={{ opacity: 1, transform: 'translateY(0)' }}>
               <div className="hero-eyebrow">
-                <span className="eyebrow-pill">01 // ORIGIN</span>
+                <span className="eyebrow-dot" />
                 <span className="eyebrow-label-text">PRISTINE DEEP WATERS</span>
               </div>
               <h2 className="hero-title">
@@ -273,7 +273,7 @@ export default function HeroSection() {
             {/* PART 2: PURIFICATION */}
             <div className="hero-step hero-step-2" ref={step2Ref} style={{ opacity: 0, transform: 'translateY(24px)', pointerEvents: 'none' }}>
               <div className="hero-eyebrow">
-                <span className="eyebrow-pill">02 // EXTRACTION</span>
+                <span className="eyebrow-dot" />
                 <span className="eyebrow-label-text">MOLECULAR DISTILLATION</span>
               </div>
               <h2 className="hero-title">
@@ -298,7 +298,7 @@ export default function HeroSection() {
             {/* PART 3: FAMILY WELLNESS & ACTION */}
             <div className="hero-step hero-step-3" ref={step3Ref} style={{ opacity: 0, transform: 'translateY(28px)', pointerEvents: 'none' }}>
               <div className="hero-eyebrow">
-                <span className="eyebrow-pill">03 // VITALITY</span>
+                <span className="eyebrow-dot" />
                 <span className="eyebrow-label-text">PURE OMEGA-3</span>
               </div>
               <h1 className="hero-title">
