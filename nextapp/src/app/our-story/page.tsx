@@ -45,12 +45,6 @@ export default function OurStoryPage() {
           <div className="subpage-hero-content">
             <div className="shop-hero-grid" style={{ alignItems: 'center' }}>
               <div>
-                <div className="subpage-breadcrumb">
-                  <Link href="/">Home</Link>
-                  <span>/</span>
-                  <span>Our Story</span>
-                </div>
-
                 <h1 className="subpage-title">
                   Born From a Legacy of Everyday Family Care.
                 </h1>

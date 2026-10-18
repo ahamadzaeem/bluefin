@@ -72,12 +72,6 @@ export default function ShopPage() {
           <div className="subpage-hero-overlay overlay-shop" />
 
           <div className="subpage-hero-content" style={{ maxWidth: '920px', textAlign: 'center', margin: '0 auto' }}>
-            <div className="subpage-breadcrumb" style={{ justifyContent: 'center' }}>
-              <Link href="/">Home</Link>
-              <span>/</span>
-              <span>Shop Formulations</span>
-            </div>
-
             <h1 className="subpage-title">
               Pure Omega-3. Made for Everyday Life.
             </h1>

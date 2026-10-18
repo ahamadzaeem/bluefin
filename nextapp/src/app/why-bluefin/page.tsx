@@ -31,12 +31,6 @@ export default function WhyBlueFinPage() {
           <div className="subpage-hero-overlay overlay-why" />
 
           <div className="subpage-hero-content" style={{ maxWidth: '960px' }}>
-            <div className="subpage-breadcrumb" style={{ justifyContent: 'center' }}>
-              <Link href="/">Home</Link>
-              <span>/</span>
-              <span>Why BlueFin</span>
-            </div>
-
             <h1 className="subpage-title">
               Science-Backed Purity. No Compromise.
             </h1>

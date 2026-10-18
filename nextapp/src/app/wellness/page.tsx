@@ -83,12 +83,6 @@ export default function WellnessPage() {
           <div className="subpage-hero-overlay overlay-wellness" />
 
           <div className="subpage-hero-content" style={{ maxWidth: '960px' }}>
-            <div className="subpage-breadcrumb" style={{ justifyContent: 'center' }}>
-              <Link href="/">Home</Link>
-              <span>/</span>
-              <span>Wellness &amp; Science</span>
-            </div>
-
             <h1 className="subpage-title">
               The Foundation of Every Living Cell.
             </h1>

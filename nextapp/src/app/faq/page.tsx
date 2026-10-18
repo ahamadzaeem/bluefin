@@ -89,12 +89,6 @@ export default function FAQPage() {
           <div className="subpage-hero-overlay overlay-faq" />
 
           <div className="subpage-hero-content" style={{ maxWidth: '920px' }}>
-            <div className="subpage-breadcrumb" style={{ justifyContent: 'center' }}>
-              <Link href="/">Home</Link>
-              <span>/</span>
-              <span>FAQ Knowledge Base</span>
-            </div>
-
             <h1 className="subpage-title">
               Clear Answers. Zero Jargon.
             </h1>
