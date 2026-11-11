@@ -317,20 +317,36 @@ export default function ShopPage() {
                           </span>
                           <span style={{ fontSize: '0.85rem', color: '#94a3b8', marginLeft: '0.35rem' }}>/ 60 Softgels</span>
                         </div>
-                        <button
-                          onClick={() => setModalProduct(prod.key)}
-                          style={{
-                            background: 'none',
-                            border: 'none',
-                            color: '#0284c7',
-                            fontSize: '0.85rem',
-                            fontWeight: 600,
-                            cursor: 'pointer',
-                            textDecoration: 'underline'
-                          }}
-                        >
-                          View Supplement Facts
-                        </button>
+                        <div style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
+                          <Link
+                            href={prod.key === '1000' ? '/products/bluefin-omega-3-1000-mg' : '/products/bluefin-omega-3-500-mg'}
+                            style={{
+                              fontSize: '0.85rem',
+                              fontWeight: 700,
+                              color: '#0284c7',
+                              textDecoration: 'none',
+                              display: 'inline-flex',
+                              alignItems: 'center',
+                              gap: '0.25rem'
+                            }}
+                          >
+                            View Details & Photos →
+                          </Link>
+                          <button
+                            onClick={() => setModalProduct(prod.key)}
+                            style={{
+                              background: 'none',
+                              border: 'none',
+                              color: '#64748b',
+                              fontSize: '0.82rem',
+                              fontWeight: 600,
+                              cursor: 'pointer',
+                              textDecoration: 'underline'
+                            }}
+                          >
+                            Supplement Facts
+                          </button>
+                        </div>
                       </div>
 
                       <div style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>

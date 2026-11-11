@@ -126,6 +126,90 @@ export const ADD_TO_CART_MUTATION = /* GraphQL */ `
   }
 `;
 
+export const GET_PRODUCT_BY_HANDLE_QUERY = /* GraphQL */ `
+  query GetProductByHandle($handle: String!) {
+    product(handle: $handle) {
+      id
+      title
+      handle
+      description
+      descriptionHtml
+      featuredImage {
+        url
+        altText
+      }
+      images(first: 20) {
+        edges {
+          node {
+            url
+            altText
+          }
+        }
+      }
+      variants(first: 10) {
+        edges {
+          node {
+            id
+            title
+            availableForSale
+            price {
+              amount
+              currencyCode
+            }
+          }
+        }
+      }
+    }
+  }
+`;
+
+/**
+ * Fetches single product details by handle with all media images
+ */
+export async function getShopifyProductByHandle(handle: string) {
+  const data = await shopifyFetch<{
+    product: {
+      id: string;
+      title: string;
+      handle: string;
+      description: string;
+      descriptionHtml: string;
+      featuredImage?: { url: string; altText?: string } | null;
+      images?: { edges: { node: { url: string; altText?: string } }[] };
+      variants?: {
+        edges: {
+          node: {
+            id: string;
+            title: string;
+            availableForSale: boolean;
+            price: { amount: string; currencyCode: string };
+          };
+        }[];
+      };
+    } | null;
+  }>({
+    query: GET_PRODUCT_BY_HANDLE_QUERY,
+    variables: { handle }
+  });
+
+  const p = data?.product;
+  if (!p) return null;
+
+  const images = (p.images?.edges || []).map(e => e.node.url).filter(Boolean);
+  const variant = p.variants?.edges?.[0]?.node;
+
+  return {
+    id: p.id,
+    title: p.title,
+    handle: p.handle,
+    description: p.description,
+    descriptionHtml: p.descriptionHtml,
+    images: images.length > 0 ? images : (p.featuredImage?.url ? [p.featuredImage.url] : []),
+    variantId: variant?.id,
+    price: variant?.price ? parseFloat(variant.price.amount) : undefined
+  };
+}
+
 export const GET_PRODUCTS_QUERY = /* GraphQL */ `
   query GetProducts($first: Int = 10) {
     products(first: $first) {
@@ -148,7 +232,7 @@ export const GET_PRODUCTS_QUERY = /* GraphQL */ `
               }
             }
           }
-          images(first: 1) {
+          images(first: 10) {
             edges {
               node {
                 url
@@ -195,9 +279,10 @@ export async function getShopifyProducts() {
   return (
     data?.products?.edges.map(e => {
       const p = e.node;
+      const allImages = (p.images?.edges || []).map(img => img.node.url).filter(Boolean);
       const imageUrl =
         p.featuredImage?.url ||
-        p.images?.edges?.[0]?.node?.url ||
+        allImages[0] ||
         null;
       const variant = p.variants?.edges?.[0]?.node;
 
@@ -206,6 +291,7 @@ export async function getShopifyProducts() {
         title: p.title,
         handle: p.handle,
         imageUrl,
+        images: allImages.length > 0 ? allImages : (imageUrl ? [imageUrl] : []),
         variantId: variant?.id,
         price: variant?.price ? parseFloat(variant.price.amount) : undefined
       };

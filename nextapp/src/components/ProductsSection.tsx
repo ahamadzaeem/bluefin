@@ -1,4 +1,5 @@
 'use client';
+import Link from 'next/link';
 import { useCart } from '@/context/CartContext';
 
 export interface CartItem {
@@ -86,9 +87,22 @@ export default function ProductsSection({ onAddToCart, onViewProduct }: {
                     Everyday wellness
                   </li>
                 </ul>
-                <button className="btn-view-product" onClick={() => onViewProduct('1000')}>
-                  VIEW PRODUCT &rarr;
-                </button>
+                <div style={{ display: 'flex', gap: '0.75rem', marginTop: '1rem', flexWrap: 'wrap' }}>
+                  <Link
+                    href="/products/bluefin-omega-3-1000-mg"
+                    className="btn-view-product"
+                    style={{ textDecoration: 'none', display: 'inline-flex', alignItems: 'center', justifyContent: 'center' }}
+                  >
+                    PRODUCT DETAILS &rarr;
+                  </Link>
+                  <button
+                    className="btn-view-product"
+                    style={{ background: 'transparent', border: '1px solid rgba(7, 33, 54, 0.2)', color: '#072136' }}
+                    onClick={() => onViewProduct('1000')}
+                  >
+                    QUICK VIEW
+                  </button>
+                </div>
               </div>
             </div>
           </div>
@@ -123,9 +137,22 @@ export default function ProductsSection({ onAddToCart, onViewProduct }: {
                     Everyday wellness
                   </li>
                 </ul>
-                <button className="btn-view-product" onClick={() => onViewProduct('500')}>
-                  VIEW PRODUCT &rarr;
-                </button>
+                <div style={{ display: 'flex', gap: '0.75rem', marginTop: '1rem', flexWrap: 'wrap' }}>
+                  <Link
+                    href="/products/bluefin-omega-3-500-mg"
+                    className="btn-view-product"
+                    style={{ textDecoration: 'none', display: 'inline-flex', alignItems: 'center', justifyContent: 'center' }}
+                  >
+                    PRODUCT DETAILS &rarr;
+                  </Link>
+                  <button
+                    className="btn-view-product"
+                    style={{ background: 'transparent', border: '1px solid rgba(7, 33, 54, 0.2)', color: '#072136' }}
+                    onClick={() => onViewProduct('500')}
+                  >
+                    QUICK VIEW
+                  </button>
+                </div>
               </div>
             </div>
           </div>
