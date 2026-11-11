@@ -145,8 +145,8 @@ export default function ShopPage() {
                   </svg>
                 </div>
                 <div>
-                  <div style={{ fontWeight: 600, fontSize: '0.9rem', color: '#072136' }}>Wild Pelagic Source</div>
-                  <div style={{ fontSize: '0.78rem', color: '#64748b' }}>Sub-zero Arctic fisheries</div>
+                  <div style={{ fontWeight: 600, fontSize: '0.9rem', color: '#072136' }}>Indian Pelagic Catch</div>
+                  <div style={{ fontSize: '0.78rem', color: '#64748b' }}>Sustainably caught sardines & mackerel</div>
                 </div>
               </div>
 
@@ -253,7 +253,8 @@ export default function ShopPage() {
                       style={{
                         height: '280px',
                         objectFit: 'contain',
-                        filter: 'drop-shadow(0 15px 25px rgba(7, 33, 54, 0.2))'
+                        mixBlendMode: 'multiply',
+                        filter: 'drop-shadow(0 15px 25px rgba(7, 33, 54, 0.15))'
                       }}
                     />
                   </div>
