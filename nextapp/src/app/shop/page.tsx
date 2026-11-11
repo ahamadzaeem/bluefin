@@ -30,9 +30,9 @@ export default function ShopPage() {
       badge: 'BESTSELLER',
       idealFor: 'Active adults, cardiovascular support, intensive cognitive focus & joint flexibility.',
       features: [
-        '1000mg Pelagic Deep-Sea Fish Oil per softgel',
-        'Enteric coated — 100% zero fishy burps',
-        'Triple molecular distillation for 0% heavy metals',
+        '1000mg Coastal Pelagic Fish Oil per softgel (18/12 Gold Grade)',
+        'MAAC Enteric Coating — 100% zero fishy burps or gastric reflux',
+        'Triple molecular distillation for 0% heavy metals & toxins',
         'Natural Vitamin E antioxidant preservation',
         '60 Enteric Coated Softgels (2-month supply)'
       ]
@@ -48,8 +48,8 @@ export default function ShopPage() {
       badge: 'FAMILY FAVORITE',
       idealFor: 'Seniors, teenagers (12+), first-time fish oil users, and gentle daily baseline health.',
       features: [
-        '500mg Gentle Fish Oil in compact mini-capsules',
-        'Ultra-easy to swallow, smooth gelatin casing',
+        '500mg Coastal Pelagic Fish Oil per mini-softgel (90 EPA / 60 DHA)',
+        'MAAC Enteric Coating — Easy to swallow, zero fishy reflux',
         'Optimal daily baseline for immunity & cellular health',
         'Purified to strict European Pharmacopoeia standards',
         '60 Mini Softgels (2-month supply)'
@@ -82,27 +82,27 @@ export default function ShopPage() {
 
             {/* Hero Feature Pills */}
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.75rem', justifyContent: 'center', marginBottom: '2.5rem' }}>
-              <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.45rem', background: 'rgba(255,255,255,0.08)', backdropFilter: 'blur(10px)', border: '1px solid rgba(255,255,255,0.15)', padding: '0.5rem 1.1rem', borderRadius: '999px', fontSize: '0.82rem', color: '#e2e8f0' }}>
-                <span style={{ color: '#38bdf8' }}>✓</span> Zero Fishy Burps
+              <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.45rem', background: 'rgba(255,255,255,0.08)', backdropFilter: 'blur(10px)', border: '1px solid rgba(16, 185, 129, 0.4)', padding: '0.5rem 1.1rem', borderRadius: '999px', fontSize: '0.82rem', color: '#ffffff' }}>
+                <span style={{ color: '#10b981', fontWeight: 800 }}>✓</span> Zero Fishy Burps (MAAC Enteric)
               </div>
-              <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.45rem', background: 'rgba(255,255,255,0.08)', backdropFilter: 'blur(10px)', border: '1px solid rgba(255,255,255,0.15)', padding: '0.5rem 1.1rem', borderRadius: '999px', fontSize: '0.82rem', color: '#e2e8f0' }}>
-                <span style={{ color: '#38bdf8' }}>✓</span> Cold Molecular Distillation
+              <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.45rem', background: 'rgba(255,255,255,0.08)', backdropFilter: 'blur(10px)', border: '1px solid rgba(16, 185, 129, 0.4)', padding: '0.5rem 1.1rem', borderRadius: '999px', fontSize: '0.82rem', color: '#ffffff' }}>
+                <span style={{ color: '#10b981', fontWeight: 800 }}>✓</span> 100% Indian Coastal Pelagic Catch
               </div>
-              <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.45rem', background: 'rgba(255,255,255,0.08)', backdropFilter: 'blur(10px)', border: '1px solid rgba(255,255,255,0.15)', padding: '0.5rem 1.1rem', borderRadius: '999px', fontSize: '0.82rem', color: '#e2e8f0' }}>
-                <span style={{ color: '#38bdf8' }}>✓</span> Free Kerala Express Shipping
+              <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.45rem', background: 'rgba(255,255,255,0.08)', backdropFilter: 'blur(10px)', border: '1px solid rgba(16, 185, 129, 0.4)', padding: '0.5rem 1.1rem', borderRadius: '999px', fontSize: '0.82rem', color: '#ffffff' }}>
+                <span style={{ color: '#10b981', fontWeight: 800 }}>✓</span> Free Kerala Express Shipping
               </div>
             </div>
 
             <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', alignItems: 'center' }}>
               <a
-                href="#card1000mg"
+                href="#card-bf-1000"
                 className="btn btn-pill-nav"
                 style={{ padding: '0.85rem 2rem', fontSize: '0.85rem' }}
               >
                 SHOP 1000 MG →
               </a>
               <a
-                href="#card500mg"
+                href="#card-bf-500"
                 className="btn"
                 style={{
                   padding: '0.85rem 1.8rem',
@@ -206,6 +206,7 @@ export default function ShopPage() {
               {productsList.map(prod => (
                 <div
                   key={prod.id}
+                  id={`card-${prod.id}`}
                   style={{
                     background: '#ffffff',
                     borderRadius: '24px',
@@ -214,7 +215,8 @@ export default function ShopPage() {
                     boxShadow: '0 10px 30px rgba(7, 33, 54, 0.06)',
                     display: 'flex',
                     flexDirection: 'column',
-                    transition: 'transform 0.3s ease, box-shadow 0.3s ease'
+                    transition: 'transform 0.3s ease, box-shadow 0.3s ease',
+                    scrollMarginTop: '100px'
                   }}
                 >
                   {/* Top Badge & Image Header */}
@@ -297,8 +299,8 @@ export default function ShopPage() {
                       </div>
                       <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
                         {prod.features.map((feat, idx) => (
-                          <li key={idx} style={{ fontSize: '0.85rem', color: '#475569', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                            <span style={{ color: '#0284c7', fontWeight: 'bold' }}>✓</span> {feat}
+                          <li key={idx} style={{ fontSize: '0.85rem', color: '#334155', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                            <span style={{ color: '#10b981', fontWeight: 800 }}>✓</span> {feat}
                           </li>
                         ))}
                       </ul>

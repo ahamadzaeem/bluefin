@@ -115,28 +115,34 @@ export default function WellnessPage() {
   const dosageGuides = [
     {
       group: 'Active Adults & High Performers',
+      age: 'Age 18 - 55 years',
+      rdi: 'Recommended Daily Intake (RDI): 250 - 500 mg EPA+DHA',
       rec: 'BlueFin 1000 MG',
-      dosage: '1 Softgel Daily',
+      dosage: '1 Softgel Daily (300mg EPA+DHA / 1000mg Fish Oil)',
       timing: 'Immediately after a nutrient-rich breakfast',
-      desc: 'Formulated for high-focus professionals and active lifestyles. Counteracts digital screen fatigue, optimizes cardiovascular output, and supports daily neuroplasticity.',
+      desc: 'Optimal support for workplace mental focus, cardiovascular arterial compliance, and counteracting daily digital blue-light eye strain.',
       badgeColor: '#0369a1',
       badgeBg: '#e0f2fe'
     },
     {
       group: 'Seniors & Joint Health',
+      age: 'Age 55+ years',
+      rdi: 'Recommended Daily Intake (RDI): 500 - 1000 mg EPA+DHA',
       rec: 'BlueFin 1000 MG',
       dosage: '1 Softgel Daily',
       timing: 'With lunch or first warm meal',
-      desc: 'Targeted to maintain supple cartilage cushion, arterial compliance, and gentle enteric absorption with zero gastric reflux.',
+      desc: 'Targeted to maintain supple cartilage cushion, arterial elasticity, and gentle MAAC enteric absorption with zero gastric reflux.',
       badgeColor: '#0284c7',
       badgeBg: '#f0f9ff'
     },
     {
       group: 'Teenagers & First-Time Users',
+      age: 'Age 12 - 18 years',
+      rdi: 'Recommended Daily Intake (RDI): 150 - 250 mg EPA+DHA',
       rec: 'BlueFin 500 MG',
-      dosage: '1 Mini Softgel Daily',
+      dosage: '1 Mini Softgel Daily (150mg EPA+DHA / 500mg Fish Oil)',
       timing: 'With morning breakfast or evening meal',
-      desc: 'Calibrated mini-capsule providing pure DHA for growing minds, study endurance, and healthy ocular function during long academic hours.',
+      desc: 'Calibrated mini-capsule providing pure DHA for growing brains, academic focus, and healthy ocular lubrication during long study hours.',
       badgeColor: '#0f766e',
       badgeBg: '#ccfbf1'
     }
@@ -219,9 +225,9 @@ export default function WellnessPage() {
             >
               {[
                 { value: '3.4x', label: 'Superior Bioavailability', detail: 'Re-esterified Triglyceride Form' },
-                { value: '3 : 2', label: 'Optimal Clinical Ratio', detail: '180mg EPA to 120mg DHA Matrix' },
+                { value: '18 : 12', label: 'Optimal Gold Ratio', detail: '180mg EPA to 120mg DHA Matrix' },
                 { value: '< 0.001', label: 'Heavy Metals (PPM)', detail: 'Far Below Global Pharmacopeia Limits' },
-                { value: '100%', label: 'Cold-Ocean Traceable', detail: 'Wild Peruvian Anchoveta Fishery' }
+                { value: '100%', label: 'Coastal Ocean Traceable', detail: 'Indian Pelagic Sardine & Mackerel Catch' }
               ].map((stat, i) => (
                 <div key={i} style={{ padding: '0.5rem' }}>
                   <div
@@ -459,10 +465,17 @@ export default function WellnessPage() {
                     flexDirection: 'column'
                   }}
                 >
-                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '1.25rem' }}>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: '0.4rem' }}>
                     <h3 style={{ fontFamily: 'var(--font-serif)', fontSize: '1.4rem', color: '#072136', lineHeight: 1.3 }}>
                       {guide.group}
                     </h3>
+                    <span style={{ fontSize: '0.78rem', fontWeight: 600, color: '#64748b' }}>
+                      {guide.age}
+                    </span>
+                  </div>
+
+                  <div style={{ fontSize: '0.78rem', color: '#0369a1', fontWeight: 600, marginBottom: '1rem', background: '#f0f9ff', padding: '0.35rem 0.65rem', borderRadius: '6px' }}>
+                    {guide.rdi}
                   </div>
 
                   <div

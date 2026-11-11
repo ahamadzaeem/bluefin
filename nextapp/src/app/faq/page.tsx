@@ -262,8 +262,21 @@ export default function FAQPage() {
                 </a>
                 <Link
                   href="/shop"
-                  className="btn btn-pill-nav"
-                  style={{ border: '1px solid #072136', color: '#072136', padding: '0.85rem 1.75rem' }}
+                  className="btn"
+                  style={{
+                    border: '1.5px solid #072136',
+                    color: '#072136',
+                    backgroundColor: '#ffffff',
+                    padding: '0.85rem 1.75rem',
+                    borderRadius: '999px',
+                    fontWeight: 700,
+                    fontSize: '0.82rem',
+                    letterSpacing: '0.04em',
+                    textDecoration: 'none',
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    transition: 'all 0.2s ease'
+                  }}
                 >
                   EXPLORE SHOP
                 </Link>

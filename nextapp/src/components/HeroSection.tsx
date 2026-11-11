@@ -249,23 +249,23 @@ export default function HeroSection() {
             <div className="hero-step hero-step-1" ref={step1Ref} style={{ opacity: 1, transform: 'translateY(0)' }}>
               <div className="hero-eyebrow">
                 <span className="eyebrow-dot" />
-                <span className="eyebrow-label-text">PRISTINE DEEP WATERS</span>
+                <span className="eyebrow-label-text">PRISTINE INDIAN COASTAL WATERS</span>
               </div>
               <h2 className="hero-title">
-                Untouched cold waters.<br />
-                <span className="cyan-line">Pure by nature.</span>
+                Ocean-Fresh Coastal Catch.<br />
+                <span className="cyan-line">Naturally rich in Omega-3.</span>
               </h2>
               <p className="hero-subtitle">
-                Responsibly harvested from clean sub-zero pelagic waters, naturally rich in potent Omega-3 fatty acids and shielded from coastal pollutants.
+                Sustainably harvested from Indian coastal waters — featuring tropical pelagic Indian oil sardines and mackerel, naturally rich in potent essential fatty acids and free from heavy metal bio-accumulation.
               </p>
               <div className="hero-step-tags">
                 <span className="step-tag">
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg>
-                  Sub-Zero Pelagic Waters
+                  Indian Pelagic Catch
                 </span>
                 <span className="step-tag">
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="10"/><path d="m4.93 4.93 4.24 4.24"/></svg>
-                  Wild-Caught Purity
+                  Peak Freshness Sourcing
                 </span>
               </div>
             </div>
@@ -305,8 +305,8 @@ export default function HeroSection() {
                 The foundation for your family&apos;s <span className="cyan-line">wellness.</span>
               </h1>
               <p className="hero-subtitle">
-                Responsibly sourced from deep cold waters.<br />
-                Expertly capsulated for maximum purity and daily vitality.
+                Proudly sourced from pristine Indian waters.<br />
+                Expertly capsulated with MAAC enteric coating for maximum bio-absorption and daily vitality.
               </p>
 
               {/* CTAs */}
