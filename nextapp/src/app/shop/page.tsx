@@ -222,12 +222,13 @@ export default function ShopPage() {
                   {/* Top Badge & Image Header */}
                   <div
                     style={{
-                      background: 'radial-gradient(circle at 50% 30%, #e0f2fe 0%, #f0fdf4 100%)',
+                      background: '#ffffff',
                       padding: '3rem 2rem 2rem',
                       display: 'flex',
                       flexDirection: 'column',
                       alignItems: 'center',
-                      position: 'relative'
+                      position: 'relative',
+                      borderBottom: '1px solid #f1f5f9'
                     }}
                   >
                     <span
@@ -253,8 +254,7 @@ export default function ShopPage() {
                       style={{
                         height: '280px',
                         objectFit: 'contain',
-                        mixBlendMode: 'multiply',
-                        filter: 'drop-shadow(0 15px 25px rgba(7, 33, 54, 0.15))'
+                        filter: 'drop-shadow(0 15px 25px rgba(7, 33, 54, 0.12))'
                       }}
                     />
                   </div>

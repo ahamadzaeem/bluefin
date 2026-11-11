@@ -203,17 +203,17 @@ export default function ProductDetailPage() {
           >
             {/* LEFT COLUMN: INTERACTIVE MEDIA GALLERY */}
             <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
-              {/* Primary Active Image Display with Zoomable Glass Effect */}
+              {/* Primary Active Image Display */}
               <div
                 style={{
-                  background: 'radial-gradient(circle at 50% 40%, #e0f2fe 0%, #f1f5f9 100%)',
+                  background: '#ffffff',
                   borderRadius: '20px',
                   padding: '3rem 2rem',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
                   minHeight: '440px',
-                  border: '1px solid rgba(226, 232, 240, 0.8)',
+                  border: '1px solid #e2e8f0',
                   position: 'relative',
                   overflow: 'hidden'
                 }}
@@ -242,8 +242,7 @@ export default function ProductDetailPage() {
                     maxHeight: '380px',
                     maxWidth: '100%',
                     objectFit: 'contain',
-                    mixBlendMode: 'multiply',
-                    filter: 'drop-shadow(0 20px 30px rgba(7, 33, 54, 0.18))',
+                    filter: 'drop-shadow(0 15px 30px rgba(7, 33, 54, 0.12))',
                     transition: 'all 0.3s ease'
                   }}
                 />
@@ -563,3 +562,4 @@ export default function ProductDetailPage() {
     </>
   );
 }
+
