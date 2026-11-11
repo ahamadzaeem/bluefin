@@ -1,4 +1,5 @@
 'use client';
+import { useCart } from '@/context/CartContext';
 
 export interface CartItem {
   id: string;
@@ -38,6 +39,9 @@ export default function ProductsSection({ onAddToCart, onViewProduct }: {
   onAddToCart: (item: CartItem) => void;
   onViewProduct: (id: string) => void;
 }) {
+  const { shopifyImages } = useCart();
+  const img1000 = shopifyImages['1000'] || '/assets/bottle_1_transparent.png';
+  const img500 = shopifyImages['500'] || '/assets/bottle_2_transparent.png';
   return (
     <section className="products-section" id="products">
       <div className="products-bg-container">
@@ -56,7 +60,7 @@ export default function ProductsSection({ onAddToCart, onViewProduct }: {
           <div className="product-card" id="card1000mg">
             <div className="product-card-inner">
               <div className="product-image-pane">
-                <img src="/assets/bottle_1_transparent.png" alt="BlueFin Omega-3 1000 MG" className="product-bottle-img bottle-large" />
+                <img src={img1000} alt="BlueFin Omega-3 1000 MG" className="product-bottle-img bottle-large" />
               </div>
               <div className="product-info-pane">
                 <div className="product-brand">BLUEFIN</div>
@@ -93,7 +97,7 @@ export default function ProductsSection({ onAddToCart, onViewProduct }: {
           <div className="product-card" id="card500mg">
             <div className="product-card-inner">
               <div className="product-image-pane">
-                <img src="/assets/bottle_2_transparent.png" alt="BlueFin Omega-3 500 MG" className="product-bottle-img bottle-small" />
+                <img src={img500} alt="BlueFin Omega-3 500 MG" className="product-bottle-img bottle-small" />
               </div>
               <div className="product-info-pane">
                 <div className="product-brand">BLUEFIN</div>

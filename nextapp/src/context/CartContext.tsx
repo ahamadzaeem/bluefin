@@ -1,5 +1,6 @@
 'use client';
-import React, { createContext, useContext, useState } from 'react';
+import React, { createContext, useContext, useState, useEffect } from 'react';
+import { getShopifyProducts } from '@/lib/shopify';
 
 export interface CartItem {
   id: string;
@@ -22,6 +23,7 @@ interface CartContextType {
   subtotal: number;
   toast: string | null;
   showToast: (msg: string) => void;
+  shopifyImages: Record<string, string>;
 }
 
 const CartContext = createContext<CartContextType | undefined>(undefined);
@@ -34,6 +36,8 @@ export const SHOPIFY_VARIANTS = {
 } as const;
 
 export function CartProvider({ children }: { children: React.ReactNode }) {
+  const [shopifyImages, setShopifyImages] = useState<Record<string, string>>({});
+
   const [cart, setCart] = useState<CartItem[]>([
     {
       id: 'bf-1000',
@@ -48,6 +52,43 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
   const [cartOpen, setCartOpen] = useState(false);
   const [toast, setToast] = useState<string | null>(null);
 
+  // Dynamically fetch live images from Shopify
+  useEffect(() => {
+    async function syncShopifyImages() {
+      try {
+        const products = await getShopifyProducts();
+        const imgMap: Record<string, string> = {};
+
+        for (const p of products) {
+          if (p.imageUrl) {
+            if (p.handle.includes('1000')) {
+              imgMap['1000'] = p.imageUrl;
+              imgMap['bf-1000'] = p.imageUrl;
+            } else if (p.handle.includes('500')) {
+              imgMap['500'] = p.imageUrl;
+              imgMap['bf-500'] = p.imageUrl;
+            }
+          }
+        }
+
+        if (Object.keys(imgMap).length > 0) {
+          setShopifyImages(imgMap);
+          // Update cart items if they match
+          setCart(prev =>
+            prev.map(item => {
+              const liveImg = imgMap[item.id];
+              return liveImg ? { ...item, img: liveImg } : item;
+            })
+          );
+        }
+      } catch (e) {
+        console.warn('Could not sync images from Shopify Storefront API:', e);
+      }
+    }
+
+    syncShopifyImages();
+  }, []);
+
   const totalItems = cart.reduce((s, i) => s + i.qty, 0);
   const subtotal = cart.reduce((s, i) => s + i.price * i.qty, 0);
 
@@ -58,15 +99,17 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
 
   const addToCart = (item: Omit<CartItem, 'qty'> & { qty?: number }) => {
     const variantId = item.variantId || SHOPIFY_VARIANTS[item.id as keyof typeof SHOPIFY_VARIANTS];
+    const liveImg = shopifyImages[item.id] || item.img;
     setCart(prev => {
       const idx = prev.findIndex(c => c.id === item.id);
       if (idx > -1) {
         const copy = [...prev];
         copy[idx].qty += item.qty || 1;
         if (!copy[idx].variantId && variantId) copy[idx].variantId = variantId;
+        if (liveImg && copy[idx].img !== liveImg) copy[idx].img = liveImg;
         return copy;
       }
-      return [...prev, { ...item, variantId, qty: item.qty || 1 }];
+      return [...prev, { ...item, img: liveImg, variantId, qty: item.qty || 1 }];
     });
     showToast(`Added ${item.name} to cart`);
     setCartOpen(true);
@@ -99,7 +142,8 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
         totalItems,
         subtotal,
         toast,
-        showToast
+        showToast,
+        shopifyImages
       }}
     >
       {children}

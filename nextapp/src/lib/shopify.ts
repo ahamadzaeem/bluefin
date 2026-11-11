@@ -163,6 +163,57 @@ export const GET_PRODUCTS_QUERY = /* GraphQL */ `
 `;
 
 /**
+ * Fetches all products with images, prices, and variant IDs from Shopify
+ */
+export async function getShopifyProducts() {
+  const data = await shopifyFetch<{
+    products: {
+      edges: {
+        node: {
+          id: string;
+          title: string;
+          handle: string;
+          featuredImage?: { url: string; altText?: string } | null;
+          images?: { edges: { node: { url: string; altText?: string } }[] };
+          variants?: {
+            edges: {
+              node: {
+                id: string;
+                title: string;
+                price: { amount: string; currencyCode: string };
+              };
+            }[];
+          };
+        };
+      }[];
+    };
+  }>({
+    query: GET_PRODUCTS_QUERY,
+    variables: { first: 10 }
+  });
+
+  return (
+    data?.products?.edges.map(e => {
+      const p = e.node;
+      const imageUrl =
+        p.featuredImage?.url ||
+        p.images?.edges?.[0]?.node?.url ||
+        null;
+      const variant = p.variants?.edges?.[0]?.node;
+
+      return {
+        id: p.id,
+        title: p.title,
+        handle: p.handle,
+        imageUrl,
+        variantId: variant?.id,
+        price: variant?.price ? parseFloat(variant.price.amount) : undefined
+      };
+    }) || []
+  );
+}
+
+/**
  * Creates a checkout cart on Shopify and returns the hosted checkout URL
  */
 export async function createShopifyCheckout(lines: { merchandiseId: string; quantity: number }[]) {
@@ -178,4 +229,5 @@ export async function createShopifyCheckout(lines: { merchandiseId: string; quan
 
   return data?.cartCreate?.cart || null;
 }
+
 

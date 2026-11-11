@@ -7,7 +7,7 @@ import { useCart } from '@/context/CartContext';
 import { productData } from '@/components/ProductsSection';
 
 export default function ShopPage() {
-  const { addToCart } = useCart();
+  const { addToCart, shopifyImages } = useCart();
   const [modalProduct, setModalProduct] = useState<string | null>(null);
   const [selectedQty, setSelectedQty] = useState<{ [key: string]: number }>({ '1000': 1, '500': 1 });
 
@@ -26,7 +26,7 @@ export default function ShopPage() {
       tag: 'HIGH POTENCY FORMULA',
       strength: 'EPA 180mg | DHA 120mg per Softgel',
       price: 990,
-      image: '/assets/bottle_1_transparent.png',
+      image: shopifyImages['1000'] || '/assets/bottle_1_transparent.png',
       badge: 'BESTSELLER',
       idealFor: 'Active adults, cardiovascular support, intensive cognitive focus & joint flexibility.',
       features: [
@@ -44,7 +44,7 @@ export default function ShopPage() {
       tag: 'GENTLE EVERYDAY FORMULA',
       strength: 'EPA 90mg | DHA 60mg per Softgel',
       price: 590,
-      image: '/assets/bottle_2_transparent.png',
+      image: shopifyImages['500'] || '/assets/bottle_2_transparent.png',
       badge: 'FAMILY FAVORITE',
       idealFor: 'Seniors, teenagers (12+), first-time fish oil users, and gentle daily baseline health.',
       features: [
