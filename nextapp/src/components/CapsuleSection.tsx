@@ -23,53 +23,49 @@ export default function CapsuleSection() {
             </filter>
           </defs>
 
-          {/* 1. TOP-LEFT LINE (1000mg PURE FISH OIL) */}
-          <polyline 
-            points="239,308 319,308 608,475" 
+          {/* 1. TOP-LEFT LINE (1000mg PURE FISH OIL) - Points directly to left upper apex of capsule */}
+          <line 
+            x1="239" y1="308" x2="680" y2="640" 
             stroke="#d4af50" 
             strokeWidth="1.5" 
-            fill="none"
             filter="url(#goldGlow)"
           />
-          {/* Glowing dot at capsule */}
-          <circle cx="608" cy="475" r="3" fill="#ffffff" />
-          <circle cx="608" cy="475" r="7" stroke="#d4af50" strokeWidth="1" fill="none" opacity="0.8" />
+          {/* Glowing precision dot at capsule surface */}
+          <circle cx="680" cy="640" r="3.5" fill="#ffffff" />
+          <circle cx="680" cy="640" r="7.5" stroke="#d4af50" strokeWidth="1" fill="none" opacity="0.8" />
 
-          {/* 2. BOTTOM-LEFT LINE (120mg DHA) */}
-          <polyline 
-            points="239,572 549,572 531,623" 
+          {/* 2. BOTTOM-LEFT LINE (120mg DHA) - Points directly to left body of capsule */}
+          <line 
+            x1="239" y1="572" x2="715" y2="700" 
             stroke="#d4af50" 
             strokeWidth="1.5" 
-            fill="none"
             filter="url(#goldGlow)"
           />
-          {/* Glowing dot at rock/capsule */}
-          <circle cx="531" cy="623" r="3" fill="#ffffff" />
-          <circle cx="531" cy="623" r="7" stroke="#d4af50" strokeWidth="1" fill="none" opacity="0.8" />
+          {/* Glowing precision dot at capsule surface */}
+          <circle cx="715" cy="700" r="3.5" fill="#ffffff" />
+          <circle cx="715" cy="700" r="7.5" stroke="#d4af50" strokeWidth="1" fill="none" opacity="0.8" />
 
-          {/* 3. TOP-RIGHT LINE (180mg EPA) */}
-          <polyline 
-            points="1418,299 1340,299 1024,491" 
+          {/* 3. TOP-RIGHT LINE (180mg EPA) - Points directly to right upper apex of capsule */}
+          <line 
+            x1="1418" y1="299" x2="992" y2="640" 
             stroke="#d4af50" 
             strokeWidth="1.5" 
-            fill="none"
             filter="url(#goldGlow)"
           />
-          {/* Glowing dot at capsule */}
-          <circle cx="1024" cy="491" r="3" fill="#ffffff" />
-          <circle cx="1024" cy="491" r="7" stroke="#d4af50" strokeWidth="1" fill="none" opacity="0.8" />
+          {/* Glowing precision dot at capsule surface */}
+          <circle cx="992" cy="640" r="3.5" fill="#ffffff" />
+          <circle cx="992" cy="640" r="7.5" stroke="#d4af50" strokeWidth="1" fill="none" opacity="0.8" />
 
-          {/* 4. BOTTOM-RIGHT LINE (Daily WELLNESS) */}
-          <polyline 
-            points="1418,593 1328,593 1111,637" 
+          {/* 4. BOTTOM-RIGHT LINE (Daily WELLNESS) - Points directly to right body of capsule */}
+          <line 
+            x1="1418" y1="593" x2="957" y2="700" 
             stroke="#d4af50" 
             strokeWidth="1.5" 
-            fill="none"
             filter="url(#goldGlow)"
           />
-          {/* Glowing dot at rock */}
-          <circle cx="1111" cy="637" r="3" fill="#ffffff" />
-          <circle cx="1111" cy="637" r="7" stroke="#d4af50" strokeWidth="1" fill="none" opacity="0.8" />
+          {/* Glowing precision dot at capsule surface */}
+          <circle cx="957" cy="700" r="3.5" fill="#ffffff" />
+          <circle cx="957" cy="700" r="7.5" stroke="#d4af50" strokeWidth="1" fill="none" opacity="0.8" />
 
           {/* ICON CIRCLES */}
 
