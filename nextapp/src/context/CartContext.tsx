@@ -3,6 +3,7 @@ import React, { createContext, useContext, useState } from 'react';
 
 export interface CartItem {
   id: string;
+  variantId?: string; // Shopify Variant GID, e.g. gid://shopify/ProductVariant/...
   name: string;
   price: number;
   strength: string;
@@ -25,10 +26,18 @@ interface CartContextType {
 
 const CartContext = createContext<CartContextType | undefined>(undefined);
 
+export const SHOPIFY_VARIANTS = {
+  'bf-1000': 'gid://shopify/ProductVariant/51074122580054',
+  'bf-500': 'gid://shopify/ProductVariant/51074166063190',
+  '1000': 'gid://shopify/ProductVariant/51074122580054',
+  '500': 'gid://shopify/ProductVariant/51074166063190',
+} as const;
+
 export function CartProvider({ children }: { children: React.ReactNode }) {
   const [cart, setCart] = useState<CartItem[]>([
     {
       id: 'bf-1000',
+      variantId: SHOPIFY_VARIANTS['bf-1000'],
       name: 'BlueFin Omega-3 1000 MG',
       price: 990,
       strength: 'EPA 180mg | DHA 120mg',
@@ -48,14 +57,16 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
   };
 
   const addToCart = (item: Omit<CartItem, 'qty'> & { qty?: number }) => {
+    const variantId = item.variantId || SHOPIFY_VARIANTS[item.id as keyof typeof SHOPIFY_VARIANTS];
     setCart(prev => {
       const idx = prev.findIndex(c => c.id === item.id);
       if (idx > -1) {
         const copy = [...prev];
         copy[idx].qty += item.qty || 1;
+        if (!copy[idx].variantId && variantId) copy[idx].variantId = variantId;
         return copy;
       }
-      return [...prev, { ...item, qty: item.qty || 1 }];
+      return [...prev, { ...item, variantId, qty: item.qty || 1 }];
     });
     showToast(`Added ${item.name} to cart`);
     setCartOpen(true);

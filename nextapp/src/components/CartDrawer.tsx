@@ -1,9 +1,42 @@
 'use client';
+import { useState } from 'react';
 import { useCart } from '@/context/CartContext';
+import { createShopifyCheckout } from '@/lib/shopify';
 import Link from 'next/link';
 
 export default function CartDrawer() {
-  const { cart, cartOpen, setCartOpen, changeQty, removeFromCart, totalItems, subtotal, toast } = useCart();
+  const { cart, cartOpen, setCartOpen, changeQty, removeFromCart, totalItems, subtotal, toast, showToast } = useCart();
+  const [isCheckingOut, setIsCheckingOut] = useState(false);
+
+  const handleCheckout = async () => {
+    if (cart.length === 0) return;
+
+    // Check if any cart item has a Shopify variant ID attached
+    const linesWithVariant = cart
+      .filter(item => Boolean(item.variantId))
+      .map(item => ({
+        merchandiseId: item.variantId!,
+        quantity: item.qty
+      }));
+
+    if (linesWithVariant.length > 0) {
+      try {
+        setIsCheckingOut(true);
+        const shopifyCart = await createShopifyCheckout(linesWithVariant);
+        if (shopifyCart?.checkoutUrl) {
+          window.location.href = shopifyCart.checkoutUrl;
+          return;
+        }
+      } catch (err) {
+        console.error('Failed to create Shopify checkout:', err);
+      } finally {
+        setIsCheckingOut(false);
+      }
+    }
+
+    // Fallback if products haven't been mapped to Shopify variants yet
+    window.location.href = `https://wre2hf-0c.myshopify.com/cart`;
+  };
 
   return (
     <>
@@ -127,9 +160,11 @@ export default function CartDrawer() {
           </div>
           <button
             className="cart-checkout-btn"
-            onClick={() => alert(`Proceeding to checkout with ₹${subtotal.toLocaleString()}`)}
+            onClick={handleCheckout}
+            disabled={isCheckingOut || cart.length === 0}
+            style={{ opacity: isCheckingOut ? 0.7 : 1, cursor: isCheckingOut ? 'wait' : 'pointer' }}
           >
-            PROCEED TO CHECKOUT →
+            {isCheckingOut ? 'CREATING SECURE CHECKOUT...' : 'PROCEED TO CHECKOUT →'}
           </button>
         </div>
       </aside>
